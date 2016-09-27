@@ -1,0 +1,43 @@
+<section>
+    <div [class.redBack]="useRedBack">About: {{msg | uppercase}}</div>
+    <div *ngIf="useRedBack">Visible with useRedBack</div>
+    <div [ngSwitch]="useRedBack">
+        <p *ngSwitchCase="true">Switch: useRedBack == true</p>
+        <p *ngSwitchCase="false">Switch: useRedBack == false</p>
+        <p *ngSwitchDefault>Switch: Default</p>
+    </div>
+    <div><button (click)="toggleStyle(!useRedBack)">Toggle style</button></div>
+    <div><button (click)="goBack()">Back to intro</button></div>
+    <hr />
+    <div>About1: {{msg}}</div>
+    <div [textContent]="'About2: ' + [msg]"></div>
+    <div (click)="event1()" class="btn btn-danger">Event 1</div>
+    <div on-click="event2()">Event 2</div>
+    <input [(ngModel)]="msg" placeholder="Message" minlength="4" required />
+    <input bindon-ngModel="msg" placeholder="Message" minlength="4" required #spy />
+    <div>{{spy.className}}</div>
+    <hr />
+    <input #refVar1 />{{refVar1.value}}
+    <input ref-refVar2 />{{refVar2.value}}
+    <hr />
+    <div>About: {{msg | lowercase}}</div>
+    <div>About: {{msg | lowercase | uppercase}}</div>
+    <div>About: {{.99 | percent}}</div>
+    <div>About: {{123.45 | currency:'EUR'}}</div>
+    <div>About: {{author | json}}</div>
+    <div>About: {{msg | myUppercase}}</div>
+    <hr />
+    <div alertOnClick="Hi">Click me!</div>
+    <div><nest-me [myName]="'Bill'" (sendHello)="getHello($event)"></nest-me></div>
+    <hr />
+    <input value="{{author.name}}" placeholder="Interpolation" />
+    <input [ngModel]="author.name" placeholder="One-way biding" />
+    <input [(ngModel)]="author.name" placeholder="Two-way biding" minlength="4" />
+    <input [(ngModel)]="author.name" placeholder="Two-way biding" minlength="4" />
+    <hr />
+    <div *ngFor="let author of authors" (click)="showDetails(author)">
+        <div>{{author.name}} ({{author.age}})</div>
+    </div>
+    <hr />
+    <author-search></author-search>
+</section>

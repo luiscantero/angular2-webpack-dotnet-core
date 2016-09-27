@@ -1,0 +1,7 @@
+<h1>{{title}}</h1>
+<nav>
+    <a routerLink="/intro" routerLinkActive="active">Intro</a>
+    <a routerLink="/about" routerLinkActive="active">About</a>
+    <a [routerLink]="['/details', 123]" routerLinkActive="active">Details</a>
+</nav>
+<router-outlet></router-outlet>

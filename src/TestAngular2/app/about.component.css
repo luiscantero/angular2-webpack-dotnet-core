@@ -1,0 +1,11 @@
+.redBack {
+    background: red;
+}
+
+.ng-valid.ng-dirty { /* Valid and dirty */
+  border-left: 5px solid #42A948; /* Green */
+}
+
+.ng-invalid.ng-dirty { /* Invalid and dirty */
+  border-left: 5px solid #a94442; /* Red */
+}

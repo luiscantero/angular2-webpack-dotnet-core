@@ -1,0 +1,18 @@
+<div id="search-component">
+    <h4>Author Search</h4>
+    <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+    <div>
+        <div *ngFor="let author of authors | async"
+             (click)="gotoDetails(author)" class="search-result">
+            {{author.name}}
+        </div>
+    </div>
+    <hr/>
+    <h5>Search test</h5>
+    <input [formControl]="term" />
+    <div>
+        <div *ngFor="let term of terms | async">
+            {{term}}
+        </div>
+    </div>
+</div>
