@@ -9,7 +9,6 @@
     "removeComments": false,
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
-    "types": [ "core-js", "node" ],
     "baseUrl": "./",
     "noEmit": true
   },
