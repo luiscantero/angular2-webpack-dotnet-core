@@ -1,14 +1,15 @@
-# angular2-webpack-dotnet-core
+# angular4-webpack-dotnet-core
 ## Description
-* Visual Studio 2015 ASP.NET Core project to demo Angular2 using webpack.
+* Visual Studio 2017 ASP.NET Core project to demo Angular4 using webpack.
 
 ## Notes
-* Supports running in Visual Studio and debugging using breakpoints, etc. (requires at least Update 3 because of better map file support).
+* Supports running in Visual Studio and debugging using breakpoints, etc.
 * Before running for the first time, run the command line `npm run build:dev` to build a development version.
-* Run the command line `npm run build:prod` to build a production version.
+* Run `npm run build:prod` to build a production version.
+* Supports running from the command line using `npm start`.
 
 ## Reference
-* [Angular2](https://angular.io/)
+* [Angular4](https://angular.io/)
 * [webpack](https://github.com/webpack/webpack)
 * [Introduction to webpack] (https://angular.io/docs/ts/latest/guide/webpack.html)
 * [List of webpack plugins] (https://webpack.github.io/docs/list-of-plugins.html)
