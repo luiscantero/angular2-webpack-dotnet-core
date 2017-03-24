@@ -403,7 +403,7 @@ var core_1 = __webpack_require__(10);
 __webpack_require__(228);
 var AppComponent = (function () {
     function AppComponent() {
-        this.title = "Angular 2 Test";
+        this.title = "Angular 4 Test";
     }
     return AppComponent;
 }());
