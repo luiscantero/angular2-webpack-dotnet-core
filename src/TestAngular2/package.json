@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "Angular 4 test using webpack",
   "scripts": {
-    "build:dev": "rimraf wwwroot && webpack --config config/webpack.dev.js --progress --profile && copyfiles mock-authors.json wwwroot",
-    "build:prod": "rimraf wwwroot && webpack --config config/webpack.prod.js --progress --profile --bail && copyfiles mock-authors.json wwwroot",
+    "build:dev": "rimraf wwwroot && webpack --config config/webpack.dev.js --progress --profile && copyfiles mock-authors.json favicon.ico wwwroot",
+    "build:prod": "rimraf wwwroot && webpack --config config/webpack.prod.js --progress --profile --bail && copyfiles mock-authors.json favicon.ico wwwroot",
     "start": "webpack-dev-server --inline --progress --port 3000",
     "lint": "tslint app/**/*.ts -t verbose"
   },

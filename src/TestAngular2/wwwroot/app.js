@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 128:
+/***/ 127:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -17,8 +17,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(10);
 var router_1 = __webpack_require__(58);
-var author_model_1 = __webpack_require__(130);
-var author_service_1 = __webpack_require__(131);
+var author_model_1 = __webpack_require__(129);
+var author_service_1 = __webpack_require__(130);
 var AboutComponent = (function () {
     function AboutComponent(router, authorService) {
         this.router = router;
@@ -59,8 +59,8 @@ var AboutComponent = (function () {
 AboutComponent = __decorate([
     core_1.Component({
         selector: 'my-about',
-        template: __webpack_require__(656),
-        styles: [__webpack_require__(651)],
+        template: __webpack_require__(654),
+        styles: [__webpack_require__(649)],
         providers: [author_service_1.AuthorService],
     }),
     __metadata("design:paramtypes", [router_1.Router,
@@ -71,7 +71,7 @@ exports.AboutComponent = AboutComponent;
 
 /***/ }),
 
-/***/ 129:
+/***/ 128:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -88,8 +88,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(10);
 var router_1 = __webpack_require__(58);
-var author_model_1 = __webpack_require__(130);
-var author_service_1 = __webpack_require__(131);
+var author_model_1 = __webpack_require__(129);
+var author_service_1 = __webpack_require__(130);
 var AuthorDetailsComponent = (function () {
     function AuthorDetailsComponent(route, authorService) {
         this.route = route;
@@ -116,8 +116,8 @@ var AuthorDetailsComponent = (function () {
 AuthorDetailsComponent = __decorate([
     core_1.Component({
         selector: 'author-details',
-        template: __webpack_require__(658),
-        styles: [__webpack_require__(653)],
+        template: __webpack_require__(656),
+        styles: [__webpack_require__(651)],
         providers: [author_service_1.AuthorService],
     }),
     __metadata("design:paramtypes", [router_1.ActivatedRoute,
@@ -128,7 +128,7 @@ exports.AuthorDetailsComponent = AuthorDetailsComponent;
 
 /***/ }),
 
-/***/ 130:
+/***/ 129:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -148,7 +148,7 @@ exports.Author = Author;
 
 /***/ }),
 
-/***/ 131:
+/***/ 130:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -164,8 +164,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(10);
-var http_1 = __webpack_require__(74);
-__webpack_require__(174);
+var http_1 = __webpack_require__(73);
+__webpack_require__(173);
 var AuthorService = (function () {
     function AuthorService(http) {
         this.http = http;
@@ -245,7 +245,7 @@ exports.AuthorService = AuthorService;
 
 /***/ }),
 
-/***/ 132:
+/***/ 131:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -266,8 +266,8 @@ var IntroComponent = (function () {
 IntroComponent = __decorate([
     core_1.Component({
         selector: 'my-intro',
-        template: __webpack_require__(660),
-        styles: [__webpack_require__(654)],
+        template: __webpack_require__(658),
+        styles: [__webpack_require__(652)],
     })
 ], IntroComponent);
 exports.IntroComponent = IntroComponent;
@@ -275,7 +275,7 @@ exports.IntroComponent = IntroComponent;
 
 /***/ }),
 
-/***/ 211:
+/***/ 210:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -289,18 +289,18 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(10);
 var platform_browser_1 = __webpack_require__(50);
-var forms_1 = __webpack_require__(94);
-var forms_2 = __webpack_require__(94);
-var http_1 = __webpack_require__(74);
-var app_component_1 = __webpack_require__(222);
-var intro_component_1 = __webpack_require__(132);
-var about_component_1 = __webpack_require__(128);
-var author_details_component_1 = __webpack_require__(129);
-var myuppercase_pipe_1 = __webpack_require__(227);
-var nestme_component_1 = __webpack_require__(228);
-var alert_directive_1 = __webpack_require__(221);
-var author_search_component_1 = __webpack_require__(224);
-var app_routing_1 = __webpack_require__(223);
+var forms_1 = __webpack_require__(93);
+var forms_2 = __webpack_require__(93);
+var http_1 = __webpack_require__(73);
+var app_component_1 = __webpack_require__(221);
+var intro_component_1 = __webpack_require__(131);
+var about_component_1 = __webpack_require__(127);
+var author_details_component_1 = __webpack_require__(128);
+var myuppercase_pipe_1 = __webpack_require__(226);
+var nestme_component_1 = __webpack_require__(227);
+var alert_directive_1 = __webpack_require__(220);
+var author_search_component_1 = __webpack_require__(223);
+var app_routing_1 = __webpack_require__(222);
 var AppModule = (function () {
     function AppModule() {
     }
@@ -334,14 +334,14 @@ exports.AppModule = AppModule;
 
 /***/ }),
 
-/***/ 216:
+/***/ 215:
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin
 
 /***/ }),
 
-/***/ 221:
+/***/ 220:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -387,7 +387,7 @@ exports.AlertOnClickDirective = AlertOnClickDirective;
 
 /***/ }),
 
-/***/ 222:
+/***/ 221:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -400,7 +400,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(10);
-__webpack_require__(229);
+__webpack_require__(228);
 var AppComponent = (function () {
     function AppComponent() {
         this.title = "Angular 2 Test";
@@ -410,8 +410,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'my-app',
-        template: __webpack_require__(657),
-        styles: [__webpack_require__(652)],
+        template: __webpack_require__(655),
+        styles: [__webpack_require__(650)],
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;
@@ -419,16 +419,16 @@ exports.AppComponent = AppComponent;
 
 /***/ }),
 
-/***/ 223:
+/***/ 222:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
 var router_1 = __webpack_require__(58);
-var intro_component_1 = __webpack_require__(132);
-var about_component_1 = __webpack_require__(128);
-var author_details_component_1 = __webpack_require__(129);
+var intro_component_1 = __webpack_require__(131);
+var about_component_1 = __webpack_require__(127);
+var author_details_component_1 = __webpack_require__(128);
 var appRoutes = [
     {
         path: '',
@@ -453,7 +453,7 @@ exports.routing = router_1.RouterModule.forRoot(appRoutes);
 
 /***/ }),
 
-/***/ 224:
+/***/ 223:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -469,11 +469,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(10);
-var forms_1 = __webpack_require__(94);
+var forms_1 = __webpack_require__(93);
 var router_1 = __webpack_require__(58);
 var Observable_1 = __webpack_require__(0);
 var Subject_1 = __webpack_require__(11);
-var author_search_service_1 = __webpack_require__(225);
+var author_search_service_1 = __webpack_require__(224);
 var AuthorSearchComponent = (function () {
     function AuthorSearchComponent(authorSearchService, router) {
         this.authorSearchService = authorSearchService;
@@ -523,7 +523,7 @@ var AuthorSearchComponent = (function () {
 AuthorSearchComponent = __decorate([
     core_1.Component({
         selector: 'author-search',
-        template: __webpack_require__(659),
+        template: __webpack_require__(657),
         providers: [author_search_service_1.AuthorSearchService]
     }),
     __metadata("design:paramtypes", [author_search_service_1.AuthorSearchService,
@@ -534,7 +534,7 @@ exports.AuthorSearchComponent = AuthorSearchComponent;
 
 /***/ }),
 
-/***/ 225:
+/***/ 224:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -550,7 +550,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(10);
-var http_1 = __webpack_require__(74);
+var http_1 = __webpack_require__(73);
 var AuthorSearchService = (function () {
     function AuthorSearchService(http) {
         this.http = http;
@@ -571,16 +571,16 @@ exports.AuthorSearchService = AuthorSearchService;
 
 /***/ }),
 
-/***/ 226:
+/***/ 225:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(process) {
 Object.defineProperty(exports, "__esModule", { value: true });
-var platform_browser_dynamic_1 = __webpack_require__(93);
+var platform_browser_dynamic_1 = __webpack_require__(92);
 var core_1 = __webpack_require__(10);
-var app_module_1 = __webpack_require__(211);
-__webpack_require__(216);
+var app_module_1 = __webpack_require__(210);
+__webpack_require__(215);
 if (process.env.ENV === 'production') {
     core_1.enableProdMode();
 }
@@ -590,7 +590,7 @@ platform_browser_dynamic_1.platformBrowserDynamic().bootstrapModule(app_module_1
 
 /***/ }),
 
-/***/ 227:
+/***/ 226:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -619,7 +619,7 @@ exports.MyUppercasePipe = MyUppercasePipe;
 
 /***/ }),
 
-/***/ 228:
+/***/ 227:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -655,8 +655,8 @@ __decorate([
 NestmeComponent = __decorate([
     core_1.Component({
         selector: 'nest-me',
-        template: __webpack_require__(661),
-        styles: [__webpack_require__(655)],
+        template: __webpack_require__(659),
+        styles: [__webpack_require__(653)],
     })
 ], NestmeComponent);
 exports.NestmeComponent = NestmeComponent;
@@ -664,24 +664,31 @@ exports.NestmeComponent = NestmeComponent;
 
 /***/ }),
 
-/***/ 229:
+/***/ 228:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
 // Observable class extensions.
+__webpack_require__(164);
 __webpack_require__(165);
-__webpack_require__(166);
 // Observable operators.
+__webpack_require__(166);
 __webpack_require__(167);
 __webpack_require__(168);
 __webpack_require__(169);
 __webpack_require__(170);
 __webpack_require__(171);
 __webpack_require__(172);
-__webpack_require__(173);
 
+
+/***/ }),
+
+/***/ 383:
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -716,188 +723,136 @@ __webpack_require__(173);
 /***/ 388:
 /***/ (function(module, exports) {
 
-// removed by extract-text-webpack-plugin
+module.exports = "<section>\r\n    <div [class.redBack]=\"useRedBack\">About: {{msg | uppercase}}</div>\r\n    <div *ngIf=\"useRedBack\">Visible with useRedBack</div>\r\n    <div [ngSwitch]=\"useRedBack\">\r\n        <p *ngSwitchCase=\"true\">Switch: useRedBack == true</p>\r\n        <p *ngSwitchCase=\"false\">Switch: useRedBack == false</p>\r\n        <p *ngSwitchDefault>Switch: Default</p>\r\n    </div>\r\n    <div><button (click)=\"toggleStyle(!useRedBack)\">Toggle style</button></div>\r\n    <div><button (click)=\"goBack()\">Back to intro</button></div>\r\n    <hr />\r\n    <div>About1: {{msg}}</div>\r\n    <div [textContent]=\"'About2: ' + [msg]\"></div>\r\n    <div (click)=\"event1()\" class=\"btn btn-danger\">Event 1</div>\r\n    <div on-click=\"event2()\">Event 2</div>\r\n    <input [(ngModel)]=\"msg\" placeholder=\"Message\" minlength=\"4\" required />\r\n    <input bindon-ngModel=\"msg\" placeholder=\"Message\" minlength=\"4\" required #spy />\r\n    <div>{{spy.className}}</div>\r\n    <hr />\r\n    <input #refVar1 />{{refVar1.value}}\r\n    <input ref-refVar2 />{{refVar2.value}}\r\n    <hr />\r\n    <div>About: {{msg | lowercase}}</div>\r\n    <div>About: {{msg | lowercase | uppercase}}</div>\r\n    <div>About: {{.99 | percent}}</div>\r\n    <div>About: {{123.45 | currency:'EUR'}}</div>\r\n    <div>About: {{author | json}}</div>\r\n    <div>About: {{msg | myUppercase}}</div>\r\n    <hr />\r\n    <div alertOnClick=\"Hi\">Click me!</div>\r\n    <div><nest-me [myName]=\"'Bill'\" (sendHello)=\"getHello($event)\"></nest-me></div>\r\n    <hr />\r\n    <input value=\"{{author.name}}\" placeholder=\"Interpolation\" />\r\n    <input [ngModel]=\"author.name\" placeholder=\"One-way biding\" />\r\n    <input [(ngModel)]=\"author.name\" placeholder=\"Two-way biding\" minlength=\"4\" />\r\n    <input [(ngModel)]=\"author.name\" placeholder=\"Two-way biding\" minlength=\"4\" />\r\n    <hr />\r\n    <div *ngFor=\"let author of authors\" (click)=\"showDetails(author)\">\r\n        <div>{{author.name}} ({{author.age}})</div>\r\n    </div>\r\n    <hr />\r\n    <author-search></author-search>\r\n</section>";
 
 /***/ }),
 
 /***/ 389:
 /***/ (function(module, exports) {
 
-module.exports = "<section>\r\n    <div [class.redBack]=\"useRedBack\">About: {{msg | uppercase}}</div>\r\n    <div *ngIf=\"useRedBack\">Visible with useRedBack</div>\r\n    <div [ngSwitch]=\"useRedBack\">\r\n        <p *ngSwitchCase=\"true\">Switch: useRedBack == true</p>\r\n        <p *ngSwitchCase=\"false\">Switch: useRedBack == false</p>\r\n        <p *ngSwitchDefault>Switch: Default</p>\r\n    </div>\r\n    <div><button (click)=\"toggleStyle(!useRedBack)\">Toggle style</button></div>\r\n    <div><button (click)=\"goBack()\">Back to intro</button></div>\r\n    <hr />\r\n    <div>About1: {{msg}}</div>\r\n    <div [textContent]=\"'About2: ' + [msg]\"></div>\r\n    <div (click)=\"event1()\" class=\"btn btn-danger\">Event 1</div>\r\n    <div on-click=\"event2()\">Event 2</div>\r\n    <input [(ngModel)]=\"msg\" placeholder=\"Message\" minlength=\"4\" required />\r\n    <input bindon-ngModel=\"msg\" placeholder=\"Message\" minlength=\"4\" required #spy />\r\n    <div>{{spy.className}}</div>\r\n    <hr />\r\n    <input #refVar1 />{{refVar1.value}}\r\n    <input ref-refVar2 />{{refVar2.value}}\r\n    <hr />\r\n    <div>About: {{msg | lowercase}}</div>\r\n    <div>About: {{msg | lowercase | uppercase}}</div>\r\n    <div>About: {{.99 | percent}}</div>\r\n    <div>About: {{123.45 | currency:'EUR'}}</div>\r\n    <div>About: {{author | json}}</div>\r\n    <div>About: {{msg | myUppercase}}</div>\r\n    <hr />\r\n    <div alertOnClick=\"Hi\">Click me!</div>\r\n    <div><nest-me [myName]=\"'Bill'\" (sendHello)=\"getHello($event)\"></nest-me></div>\r\n    <hr />\r\n    <input value=\"{{author.name}}\" placeholder=\"Interpolation\" />\r\n    <input [ngModel]=\"author.name\" placeholder=\"One-way biding\" />\r\n    <input [(ngModel)]=\"author.name\" placeholder=\"Two-way biding\" minlength=\"4\" />\r\n    <input [(ngModel)]=\"author.name\" placeholder=\"Two-way biding\" minlength=\"4\" />\r\n    <hr />\r\n    <div *ngFor=\"let author of authors\" (click)=\"showDetails(author)\">\r\n        <div>{{author.name}} ({{author.age}})</div>\r\n    </div>\r\n    <hr />\r\n    <author-search></author-search>\r\n</section>";
+module.exports = "<h1>{{title}}</h1>\r\n<nav>\r\n    <a routerLink=\"/intro\" routerLinkActive=\"active\">Intro</a>\r\n    <a routerLink=\"/about\" routerLinkActive=\"active\">About</a>\r\n    <a [routerLink]=\"['/details', 123]\" routerLinkActive=\"active\">Details</a>\r\n</nav>\r\n<router-outlet></router-outlet>";
 
 /***/ }),
 
 /***/ 390:
 /***/ (function(module, exports) {
 
-module.exports = "<h1>{{title}}</h1>\r\n<nav>\r\n    <a routerLink=\"/intro\" routerLinkActive=\"active\">Intro</a>\r\n    <a routerLink=\"/about\" routerLinkActive=\"active\">About</a>\r\n    <a [routerLink]=\"['/details', 123]\" routerLinkActive=\"active\">Details</a>\r\n</nav>\r\n<router-outlet></router-outlet>";
+module.exports = "<section *ngIf=\"author\">\r\n    <h2>Author Details</h2>\r\n    <div>Name: {{author.name}}</div>\r\n    <div>Age: {{author.age}}</div>\r\n</section>";
 
 /***/ }),
 
 /***/ 391:
 /***/ (function(module, exports) {
 
-module.exports = "<section *ngIf=\"author\">\r\n    <h2>Author Details</h2>\r\n    <div>Name: {{author.name}}</div>\r\n    <div>Age: {{author.age}}</div>\r\n</section>";
+module.exports = "<div id=\"search-component\">\r\n    <h4>Author Search</h4>\r\n    <input #searchBox id=\"search-box\" (keyup)=\"search(searchBox.value)\" />\r\n    <div>\r\n        <div *ngFor=\"let author of authors | async\"\r\n             (click)=\"gotoDetails(author)\" class=\"search-result\">\r\n            {{author.name}}\r\n        </div>\r\n    </div>\r\n    <hr/>\r\n    <h5>Search test</h5>\r\n    <input [formControl]=\"term\" />\r\n    <div>\r\n        <div *ngFor=\"let term of terms | async\">\r\n            {{term}}\r\n        </div>\r\n    </div>\r\n</div>";
 
 /***/ }),
 
 /***/ 392:
 /***/ (function(module, exports) {
 
-module.exports = "<div id=\"search-component\">\r\n    <h4>Author Search</h4>\r\n    <input #searchBox id=\"search-box\" (keyup)=\"search(searchBox.value)\" />\r\n    <div>\r\n        <div *ngFor=\"let author of authors | async\"\r\n             (click)=\"gotoDetails(author)\" class=\"search-result\">\r\n            {{author.name}}\r\n        </div>\r\n    </div>\r\n    <hr/>\r\n    <h5>Search test</h5>\r\n    <input [formControl]=\"term\" />\r\n    <div>\r\n        <div *ngFor=\"let term of terms | async\">\r\n            {{term}}\r\n        </div>\r\n    </div>\r\n</div>";
+module.exports = "<section>\r\n    Intro\r\n</section>";
 
 /***/ }),
 
 /***/ 393:
 /***/ (function(module, exports) {
 
-module.exports = "<section>\r\n    Intro\r\n</section>";
+module.exports = "<input [(ngModel)]=\"myName\" placeholder=\"Name\" /><button (click)=\"sayHello()\">Say hello</button>";
 
 /***/ }),
 
-/***/ 394:
-/***/ (function(module, exports) {
+/***/ 649:
+/***/ (function(module, exports, __webpack_require__) {
 
-module.exports = "<input [(ngModel)]=\"myName\" placeholder=\"Name\" /><button (click)=\"sayHello()\">Say hello</button>";
+
+        var result = __webpack_require__(383);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
+
+/***/ }),
+
+/***/ 650:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+        var result = __webpack_require__(384);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
 
 /***/ }),
 
 /***/ 651:
 /***/ (function(module, exports, __webpack_require__) {
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
 
-// load the styles
-var content = __webpack_require__(384);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(71)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../node_modules/extract-text-webpack-plugin/loader.js??ref--3-0!../node_modules/style-loader/index.js!../node_modules/css-loader/index.js?source-map!./about.component.css", function() {
-			var newContent = require("!!../node_modules/extract-text-webpack-plugin/loader.js??ref--3-0!../node_modules/style-loader/index.js!../node_modules/css-loader/index.js?source-map!./about.component.css");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
+        var result = __webpack_require__(385);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
 
 /***/ }),
 
 /***/ 652:
 /***/ (function(module, exports, __webpack_require__) {
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
 
-// load the styles
-var content = __webpack_require__(385);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(71)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../node_modules/extract-text-webpack-plugin/loader.js??ref--3-0!../node_modules/style-loader/index.js!../node_modules/css-loader/index.js?source-map!./app.component.css", function() {
-			var newContent = require("!!../node_modules/extract-text-webpack-plugin/loader.js??ref--3-0!../node_modules/style-loader/index.js!../node_modules/css-loader/index.js?source-map!./app.component.css");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
+        var result = __webpack_require__(386);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
 
 /***/ }),
 
 /***/ 653:
 /***/ (function(module, exports, __webpack_require__) {
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
 
-// load the styles
-var content = __webpack_require__(386);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(71)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../node_modules/extract-text-webpack-plugin/loader.js??ref--3-0!../node_modules/style-loader/index.js!../node_modules/css-loader/index.js?source-map!./author-details.component.css", function() {
-			var newContent = require("!!../node_modules/extract-text-webpack-plugin/loader.js??ref--3-0!../node_modules/style-loader/index.js!../node_modules/css-loader/index.js?source-map!./author-details.component.css");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
+        var result = __webpack_require__(387);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
 
 /***/ }),
 
 /***/ 654:
 /***/ (function(module, exports, __webpack_require__) {
 
-// style-loader: Adds some css to the DOM by adding a <style> tag
 
-// load the styles
-var content = __webpack_require__(387);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(71)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../node_modules/extract-text-webpack-plugin/loader.js??ref--3-0!../node_modules/style-loader/index.js!../node_modules/css-loader/index.js?source-map!./intro.component.css", function() {
-			var newContent = require("!!../node_modules/extract-text-webpack-plugin/loader.js??ref--3-0!../node_modules/style-loader/index.js!../node_modules/css-loader/index.js?source-map!./intro.component.css");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
+        var result = __webpack_require__(388);
+
+        if (typeof result === "string") {
+            module.exports = result;
+        } else {
+            module.exports = result.toString();
+        }
+    
 
 /***/ }),
 
 /***/ 655:
-/***/ (function(module, exports, __webpack_require__) {
-
-// style-loader: Adds some css to the DOM by adding a <style> tag
-
-// load the styles
-var content = __webpack_require__(388);
-if(typeof content === 'string') content = [[module.i, content, '']];
-// add the styles to the DOM
-var update = __webpack_require__(71)(content, {});
-if(content.locals) module.exports = content.locals;
-// Hot Module Replacement
-if(false) {
-	// When the styles change, update the <style> tags
-	if(!content.locals) {
-		module.hot.accept("!!../node_modules/extract-text-webpack-plugin/loader.js??ref--3-0!../node_modules/style-loader/index.js!../node_modules/css-loader/index.js?source-map!./nestme.component.css", function() {
-			var newContent = require("!!../node_modules/extract-text-webpack-plugin/loader.js??ref--3-0!../node_modules/style-loader/index.js!../node_modules/css-loader/index.js?source-map!./nestme.component.css");
-			if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
-			update(newContent);
-		});
-	}
-	// When the module is disposed, remove the <style> tags
-	module.hot.dispose(function() { update(); });
-}
-
-/***/ }),
-
-/***/ 656:
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -912,7 +867,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 657:
+/***/ 656:
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -927,7 +882,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 658:
+/***/ 657:
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -942,7 +897,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 659:
+/***/ 658:
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -957,7 +912,7 @@ if(false) {
 
 /***/ }),
 
-/***/ 660:
+/***/ 659:
 /***/ (function(module, exports, __webpack_require__) {
 
 
@@ -972,30 +927,15 @@ if(false) {
 
 /***/ }),
 
-/***/ 661:
-/***/ (function(module, exports, __webpack_require__) {
-
-
-        var result = __webpack_require__(394);
-
-        if (typeof result === "string") {
-            module.exports = result;
-        } else {
-            module.exports = result.toString();
-        }
-    
-
-/***/ }),
-
-/***/ 94:
+/***/ 93:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__ = __webpack_require__(179);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__ = __webpack_require__(178);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_observable_forkJoin__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__ = __webpack_require__(119);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__ = __webpack_require__(118);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_observable_fromPromise__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__ = __webpack_require__(65);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_operator_map__);
@@ -7071,5 +7011,5 @@ ReactiveFormsModule.ctorParameters = function () { return []; };
 
 /***/ })
 
-},[226]);
+},[225]);
 //# sourceMappingURL=app.js.map
