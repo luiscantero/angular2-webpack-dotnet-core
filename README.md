@@ -11,13 +11,13 @@
 ## Reference
 * [Angular4](https://angular.io/)
 * [webpack](https://github.com/webpack/webpack)
-* [Introduction to webpack] (https://angular.io/docs/ts/latest/guide/webpack.html)
-* [List of webpack plugins] (https://webpack.github.io/docs/list-of-plugins.html)
-* [AngularClass/angular2-webpack-starter] (https://github.com/AngularClass/angular2-webpack-starter)
-* [s-panferov/awesome-typescript-loader] (https://github.com/s-panferov/awesome-typescript-loader)
-* [SourceMapDevToolPlugin] (https://webpack.github.io/docs/list-of-plugins.html#sourcemapdevtoolplugin)
-* [output.devtoolModuleFilenameTemplate] (https://github.com/webpack/docs/wiki/Configuration)
-* [Enabling Sourcemaps in webpack] (http://survivejs.com/webpack/developing-with-webpack/enabling-sourcemaps/)
+* [Introduction to webpack](https://angular.io/docs/ts/latest/guide/webpack.html)
+* [List of webpack plugins](https://webpack.github.io/docs/list-of-plugins.html)
+* [AngularClass/angular2-webpack-starter](https://github.com/AngularClass/angular2-webpack-starter)
+* [s-panferov/awesome-typescript-loader](https://github.com/s-panferov/awesome-typescript-loader)
+* [SourceMapDevToolPlugin](https://webpack.github.io/docs/list-of-plugins.html#sourcemapdevtoolplugin)
+* [output.devtoolModuleFilenameTemplate](https://github.com/webpack/docs/wiki/Configuration)
+* [Enabling Sourcemaps in webpack](http://survivejs.com/webpack/developing-with-webpack/enabling-sourcemaps/)
 
 ### License
 [MIT](http://opensource.org/licenses/MIT)
