@@ -10,7 +10,7 @@ import { Author } from './author.model';
 
 @Component({
     selector: 'author-search',
-    template: require('to-string!./author-search.component.html'),
+    template: require('to-string-loader!./author-search.component.html'),
     providers: [AuthorSearchService]
 })
 export class AuthorSearchComponent implements OnInit {

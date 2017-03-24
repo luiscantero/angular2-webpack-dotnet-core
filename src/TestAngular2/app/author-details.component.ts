@@ -5,8 +5,8 @@ import { AuthorService } from './author.service';
 
 @Component({
     selector: 'author-details',
-    template: require('to-string!./author-details.component.html'),
-    styles: [require('to-string!./author-details.component.css')],
+    template: require('to-string-loader!./author-details.component.html'),
+    styles: [require('to-string-loader!./author-details.component.css')],
     providers: [AuthorService],
 })
 export class AuthorDetailsComponent implements OnInit, OnDestroy {

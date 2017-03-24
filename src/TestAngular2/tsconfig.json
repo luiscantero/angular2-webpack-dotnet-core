@@ -10,7 +10,8 @@
     "noImplicitAny": true,
     "suppressImplicitAnyIndexErrors": true,
     "baseUrl": "./",
-    "noEmit": true
+    "noEmit": true,
+    "lib": [ "es6", "dom" ]
   },
   "exclude": [
     "node_modules"

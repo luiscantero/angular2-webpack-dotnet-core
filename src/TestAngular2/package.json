@@ -1,7 +1,7 @@
 {
-  "name": "angular2_webpack",
+  "name": "angular4_webpack",
   "version": "1.0.0",
-  "description": "Angular 2 test using webpack",
+  "description": "Angular 4 test using webpack",
   "scripts": {
     "build:dev": "rimraf wwwroot && webpack --config config/webpack.dev.js --progress --profile && copyfiles mock-authors.json wwwroot",
     "build:prod": "rimraf wwwroot && webpack --config config/webpack.prod.js --progress --profile --bail && copyfiles mock-authors.json wwwroot",
@@ -25,7 +25,7 @@
     "rxjs": "5.2.0",
     "zone.js": "^0.8.5",
 
-    "angular2-in-memory-web-api": "~0.0.21",
+    "angular-in-memory-web-api": "~0.3.1",
     "bootstrap": "^3.3.7",
     "jquery": "^3.1.1"
   },

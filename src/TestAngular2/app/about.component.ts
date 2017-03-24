@@ -8,8 +8,8 @@ import { Subject } from 'rxjs/Subject';
 
 @Component({
     selector: 'my-about',
-    template: require('to-string!./about.component.html'),
-    styles: [require('to-string!./about.component.css')],
+    template: require('to-string-loader!./about.component.html'),
+    styles: [require('to-string-loader!./about.component.css')],
     providers: [AuthorService],
 })
 export class AboutComponent implements OnInit {
