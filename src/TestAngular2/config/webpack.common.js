@@ -5,8 +5,8 @@ var helpers = require('./helpers');
 
 module.exports = {
     entry: {
-        'polyfills': './polyfills.ts',
-        'vendor': './vendor.ts',
+        'polyfills': './config/polyfills.ts',
+        'vendors': './config/vendors.ts',
         'app': './app/main.ts'
     },
 
@@ -53,6 +53,11 @@ module.exports = {
         new webpack.optimize.CommonsChunkPlugin({
             name: ['app', 'vendor', 'polyfills']
         }),
+
+        new webpack.ContextReplacementPlugin(
+            /angular(\\|\/)core(\\|\/)@angular/,
+            __dirname
+        ),
 
         new HtmlWebpackPlugin({
             template: './index.html'
