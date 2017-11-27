@@ -7,5 +7,5 @@ import './rxjs-extensions';
     styles: [require('to-string-loader!./app.component.css')],
 })
 export class AppComponent {
-    title = "Angular 4 Test";
+    title = "Angular 5 Test";
 }
