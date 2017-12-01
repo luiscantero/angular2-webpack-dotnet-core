@@ -55,7 +55,7 @@ module.exports = {
         }),
 
         new webpack.ContextReplacementPlugin(
-            /angular(\\|\/)core(\\|\/)@angular/,
+            /angular(\\|\/)core/,
             __dirname
         ),
 

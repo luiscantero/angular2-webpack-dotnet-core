@@ -38,7 +38,6 @@ export class AuthorSearchComponent implements OnInit {
                 ? this.authorSearchService.search(term)
                 // or empty observable if no search term.
                 : Observable.of<Author[]>([]))
-
             .catch((error: string) => {
                 // Todo: Real error handling.
                 console.log(error);
@@ -56,7 +55,6 @@ export class AuthorSearchComponent implements OnInit {
                 })(term)
                 // or empty observable if no search term.
                 : Observable.of<string[]>([]))
-
             .catch((error: string) => {
                 // Todo: Real error handling.
                 console.log(error);

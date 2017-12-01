@@ -16,28 +16,30 @@ module.exports = webpackMerge(commonConfig, {
         chunkFilename: '[id].[hash].chunk.js'
     },
 
-    htmlLoader: {
-        // Workaround for ng2 (e.g. don't remove *ngFor).
-        minimize: true,
-        removeAttributeQuotes: false,
-        caseSensitive: true,
-        customAttrSurround: [[/#/, /(?:)/], [/\*/, /(?:)/], [/\[?\(?/, /(?:)/]],
-        customAttrAssign: [/\)?\]?=/]
-    },
-
     plugins: [
-      new webpack.NoErrorsPlugin(),
-      new webpack.optimize.DedupePlugin(),
-      new webpack.optimize.UglifyJsPlugin({ // https://github.com/angular/angular/issues/10618
-          mangle: {
-              keep_fnames: true
-          }
-      }),
-      new ExtractTextPlugin('[name].[hash].css'),
-      new webpack.DefinePlugin({
-          'process.env': {
-              'ENV': JSON.stringify(ENV)
-          }
-      })
+        new webpack.LoaderOptionsPlugin({
+            options: {
+                htmlLoader: {
+                    // Workaround for ng2 (e.g. don't remove *ngFor).
+                    minimize: true,
+                    removeAttributeQuotes: false,
+                    caseSensitive: true,
+                    customAttrSurround: [[/#/, /(?:)/], [/\*/, /(?:)/], [/\[?\(?/, /(?:)/]],
+                    customAttrAssign: [/\)?\]?=/]
+                }
+            }
+        }),
+        new webpack.NoEmitOnErrorsPlugin(),
+        new webpack.optimize.UglifyJsPlugin({ // https://github.com/angular/angular/issues/10618
+            mangle: {
+                keep_fnames: true
+            }
+        }),
+        new ExtractTextPlugin('[name].[hash].css'),
+        new webpack.DefinePlugin({
+            'process.env': {
+                'ENV': JSON.stringify(ENV)
+            }
+        })
     ]
 });
