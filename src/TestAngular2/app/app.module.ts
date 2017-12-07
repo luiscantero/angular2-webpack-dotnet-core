@@ -6,7 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule }      from '@angular/http';
 
 import { AppComponent }    from './app.component';
-import { routing }         from './app.routing';
+import { AppRoutingModule } from './app-routing.module';
 import { MaterialModule }  from './material.module';
 
 import { IntroComponent }  from './intro.component';
@@ -20,11 +20,11 @@ import { AuthorSearchComponent } from './author-search.component';
 @NgModule({
     imports: [
         BrowserModule,
+        AppRoutingModule,
         BrowserAnimationsModule,
         FormsModule,
         ReactiveFormsModule,
         HttpModule,
-        routing,
         MaterialModule,
     ],
     declarations: [

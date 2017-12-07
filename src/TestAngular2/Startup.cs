@@ -20,6 +20,19 @@ namespace TestAngular2
                 app.UseDeveloperExceptionPage();
             }
 
+            // 404 middleware.
+            app.Use(async (context, next) =>
+            {
+                await next();
+
+                // Retry with default path.
+                if (context.Response.StatusCode == 404)
+                {
+                    context.Request.Path = "/";
+                    await next();
+                }
+            });
+
             app.UseFileServer();
         }
     }

@@ -17,10 +17,17 @@
     <input bindon-ngModel="msg" placeholder="Message" minlength="4" required #spy />
     <div>{{spy.className}}</div>
     <hr />
-    <mat-form-field>
-        <input #refVar1 matInput placeholder="Input 1" />{{refVar1.value}}
-        <input ref-refVar2 matInput placeholder="Input 2" />{{refVar2.value}}
-    </mat-form-field>
+    <form>
+        <mat-form-field>
+            <input #refVar1 placeholder="Input 1" matInput />
+        </mat-form-field>
+        {{refVar1.value}}
+        <br />
+        <mat-form-field>
+            <input ref-refVar2 placeholder="Input 2" matInput />
+        </mat-form-field>
+        {{refVar2.value}}
+    </form>
     <hr />
     <div>About: {{msg | lowercase}}</div>
     <div>About: {{msg | lowercase | uppercase}}</div>
