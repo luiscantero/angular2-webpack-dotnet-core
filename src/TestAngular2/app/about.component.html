@@ -36,7 +36,7 @@
     <div>About: {{author | json}}</div>
     <div>About: {{msg | myUppercase}}</div>
     <hr />
-    <div alertOnClick="Hi">Click me!</div>
+    <div alertOnClick="This is the param">This is the content</div>
     <div><nest-me [myName]="'Bill'" (sendHello)="getHello($event)"></nest-me></div>
     <hr />
     <input value="{{author.name}}" placeholder="Interpolation" />

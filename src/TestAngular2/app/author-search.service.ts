@@ -12,6 +12,6 @@ export class AuthorSearchService {
     search(term: string): Observable<Author[]> {
         return this.http
             .get(`/mock-authors.json?name=${term}`)
-            .map((r: Response) => r.json().data as Author[]);
+            .map((response: Response) => response.json().data as Author[]);
     }
 }

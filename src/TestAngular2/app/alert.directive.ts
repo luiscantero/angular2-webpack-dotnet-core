@@ -8,9 +8,10 @@ export class AlertOnClickDirective {
 
     constructor(el: ElementRef) { this.el = el.nativeElement; }
 
-    @Input() alertOnClick: string;
+    @Input() alertOnClick: string; // Param.
 
     @HostListener('click') OnClick() {
-        alert('Clicked: ' + this.alertOnClick + "\n" + this.el.textContent);
+        alert('Clicked: ' + this.alertOnClick + "\n" +
+                            this.el.textContent);
     }
 }
