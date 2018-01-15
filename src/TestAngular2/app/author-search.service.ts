@@ -10,8 +10,10 @@ export class AuthorSearchService {
     constructor(private http: Http) { }
 
     search(term: string): Observable<Author[]> {
+        console.log(term);
         return this.http
-            .get(`/mock-authors.json?name=${term}`)
+            //.get(`/mock-authors.json?name=${term}`)
+            .get(`http://localhost:8081/api/authors/${term}`)
             .map((response: Response) => response.json().data as Author[]);
     }
 }

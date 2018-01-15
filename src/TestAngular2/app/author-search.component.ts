@@ -26,7 +26,7 @@ export class AuthorSearchComponent implements OnInit {
         private router: Router) { }
 
     // Push search term into observable stream.
-    search(term: string): void { console.log(term); this.searchSubject.next(term); }
+    search(term: string): void { this.searchSubject.next(term); }
 
     ngOnInit(): void {
         this.authors = this.searchSubject
