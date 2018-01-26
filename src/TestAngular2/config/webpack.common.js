@@ -1,6 +1,7 @@
 ﻿var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var OpenBrowserPlugin = require('open-browser-webpack-plugin');
 var helpers = require('./helpers');
 
 module.exports = {
@@ -62,6 +63,8 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: './index.html'
         }),
+
+        new OpenBrowserPlugin({ url: 'http://localhost:3000' }),
 
         new webpack.ProvidePlugin({
             jQuery: 'jquery',

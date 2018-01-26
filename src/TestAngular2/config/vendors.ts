@@ -11,8 +11,8 @@ import 'rxjs';
 
 // Other vendors for example jQuery, Lodash or Bootstrap
 // You can import js, ts, css, sass, ...
-import 'jquery';
-import 'bootstrap/dist/css/bootstrap.css';
-import 'bootstrap/dist/js/bootstrap.js';
+//import 'jquery';
+//import 'bootstrap/dist/css/bootstrap.css';
+//import 'bootstrap/dist/js/bootstrap.js';
 import '@angular/material/prebuilt-themes/deeppurple-amber.css';
 import 'webpack-material-design-icons';

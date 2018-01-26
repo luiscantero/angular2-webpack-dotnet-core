@@ -11,7 +11,7 @@
     <hr />
     <div>About1: {{msg}}</div>
     <div [textContent]="'About2: ' + [msg]"></div>
-    <div (click)="event1()" class="btn btn-danger">Event 1</div>
+    <div (click)="event1()">Event 1</div>
     <div><button on-click="event2()" mat-raised-button color="primary">Event 2</button></div>
     <input [(ngModel)]="msg" placeholder="Message" minlength="4" required />
     <input bindon-ngModel="msg" placeholder="Message" minlength="4" required #spy />
