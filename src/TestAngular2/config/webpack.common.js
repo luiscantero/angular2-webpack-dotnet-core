@@ -66,10 +66,10 @@ module.exports = {
 
         new OpenBrowserPlugin({ url: 'http://localhost:3000' }),
 
-        new webpack.ProvidePlugin({
-            jQuery: 'jquery',
-            $: 'jquery',
-            jquery: 'jquery'
-        })
+        //new webpack.ProvidePlugin({
+        //    jQuery: 'jquery',
+        //    $: 'jquery',
+        //    jquery: 'jquery'
+        //}),
     ]
 };
