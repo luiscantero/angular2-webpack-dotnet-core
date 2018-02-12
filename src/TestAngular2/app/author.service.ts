@@ -36,8 +36,9 @@ export class AuthorService {
 
     // Update.
     private put(author: Author): Promise<Author> {
-        let headers = new HttpHeaders();
-        headers.append('Content-Type', 'application/json');
+        let headers = new HttpHeaders({
+            'Content-Type': 'application/json'
+        });
 
         let url = `${this.authorsUrl}/${author.name}`;
 
@@ -50,8 +51,9 @@ export class AuthorService {
 
     // Delete.
     delete(author: Author) {
-        let headers = new HttpHeaders();
-        headers.append('Content-Type', 'application/json');
+        let headers = new HttpHeaders({
+            'Content-Type': 'application/json'
+        });
 
         let url = `${this.authorsUrl}/${author.name}`;
 
