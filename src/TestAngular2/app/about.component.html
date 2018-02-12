@@ -44,6 +44,8 @@
     <input [(ngModel)]="author.name" placeholder="Two-way biding" minlength="4" />
     <input [(ngModel)]="author.name" placeholder="Two-way biding" minlength="4" />
     <hr />
+    <input [(ngModel)]="repo" placeholder="Repository" />
+    <hr />
     <div *ngFor="let author of authors" (click)="showDetails(author)">
         <div>{{author.name}} ({{author.age}})</div>
     </div>

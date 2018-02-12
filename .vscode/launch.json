@@ -5,7 +5,7 @@
     "version": "0.2.0",
     "compounds": [
         {
-            "name": "ASP.Net Core & Browser",
+            "name": ".NET Core & Browser",
             "configurations": [
                 ".NET Core Launch (web)",
                 "Launch Chrome"

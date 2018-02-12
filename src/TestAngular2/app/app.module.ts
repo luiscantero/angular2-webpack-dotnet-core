@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule }     from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpModule }      from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent }    from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -16,6 +16,7 @@ import { MyUppercasePipe } from './myuppercase.pipe';
 import { NestmeComponent } from './nestme.component';
 import { AlertOnClickDirective } from './alert.directive';
 import { AuthorSearchComponent } from './author-search.component';
+import { RepositoryService } from './repository.service';
 
 @NgModule({
     imports: [
@@ -24,7 +25,7 @@ import { AuthorSearchComponent } from './author-search.component';
         BrowserAnimationsModule,
         FormsModule,
         ReactiveFormsModule,
-        HttpModule,
+        HttpClientModule,
         MaterialModule,
     ],
     declarations: [
@@ -37,7 +38,7 @@ import { AuthorSearchComponent } from './author-search.component';
         AlertOnClickDirective,
         AuthorSearchComponent,
     ],
-    providers: [],
+    providers: [RepositoryService],
     bootstrap: [ AppComponent ]
 })
 export class AppModule { }

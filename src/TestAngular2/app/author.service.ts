@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Author } from './author.model';
 import { AUTHORS } from './mock-authors';
 
@@ -7,12 +7,12 @@ import { AUTHORS } from './mock-authors';
 export class AuthorService {
     private authorsUrl = '/mock-authors.json'; // URL to web api.
 
-    constructor(private http: Http) { }
+    constructor(private http: HttpClient) { }
 
     getAuthors(): Promise<Author[]> {
         return this.http.get(this.authorsUrl)
             .toPromise()
-            .then((response: any) => response.json().data as Author[])
+            .then((response: any) => response.data as Author[])
             .catch(this.handleError);
     }
 
@@ -23,20 +23,20 @@ export class AuthorService {
 
     // Create.
     private post(author: Author): Promise<Author> {
-        let headers = new Headers({
+        let headers = new HttpHeaders({
             'Content-Type': 'application/json'
         });
 
         return this.http
             .post(this.authorsUrl, JSON.stringify(author), { headers: headers })
             .toPromise()
-            .then((res: any) => res.json().data)
+            .then((res: any) => res.data)
             .catch(this.handleError);
     }
 
     // Update.
     private put(author: Author): Promise<Author> {
-        let headers = new Headers();
+        let headers = new HttpHeaders();
         headers.append('Content-Type', 'application/json');
 
         let url = `${this.authorsUrl}/${author.name}`;
@@ -50,7 +50,7 @@ export class AuthorService {
 
     // Delete.
     delete(author: Author) {
-        let headers = new Headers();
+        let headers = new HttpHeaders();
         headers.append('Content-Type', 'application/json');
 
         let url = `${this.authorsUrl}/${author.name}`;

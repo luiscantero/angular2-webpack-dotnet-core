@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { HttpClient, HttpResponse } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable';
 
 import { Author } from './author.model';
@@ -7,13 +7,13 @@ import { Author } from './author.model';
 @Injectable()
 export class AuthorSearchService {
 
-    constructor(private http: Http) { }
+    constructor(private http: HttpClient) { }
 
     search(term: string): Observable<Author[]> {
         console.log(term);
         return this.http
             //.get(`/mock-authors.json?name=${term}`)
             .get(`http://localhost:8081/api/authors/${term}`)
-            .map((response: Response) => response.json().data as Author[]);
+            .map((response: any) => response.data as Author[]);
     }
 }
