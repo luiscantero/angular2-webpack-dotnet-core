@@ -19,12 +19,12 @@
     <hr />
     <form>
         <mat-form-field>
-            <input #refVar1 placeholder="Input 1" matInput />
+            <input #refVar1 name="input1" placeholder="Input 1" matInput />
         </mat-form-field>
         {{refVar1.value}}
         <br />
         <mat-form-field>
-            <input ref-refVar2 placeholder="Input 2" matInput />
+            <input ref-refVar2 name="input2" placeholder="Input 2" matInput />
         </mat-form-field>
         {{refVar2.value}}
     </form>
