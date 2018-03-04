@@ -10,7 +10,7 @@ export class NestmeComponent {
     @Input() myName: string;
     @Output() sendHello = new EventEmitter();
 
-    sayHello(): void {
+    sayHello() {
         this.sendHello.emit("Hello " + this.myName);
     }
 }

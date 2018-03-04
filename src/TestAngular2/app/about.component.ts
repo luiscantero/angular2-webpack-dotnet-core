@@ -3,8 +3,6 @@ import { Router } from '@angular/router';
 
 import { Author } from './author.model';
 import { AuthorService } from './author.service';
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
 
 import { RepositoryService } from './repository.service';
 
@@ -36,7 +34,7 @@ export class AboutComponent implements OnInit, OnDestroy {
         this.repoSvc.set("repo", this.repo);
     }
 
-    goBack(): void {
+    goBack() {
         // Go back.
         window.history.back();
 
@@ -45,23 +43,23 @@ export class AboutComponent implements OnInit, OnDestroy {
         //this.router.navigate(link);
     }
 
-    toggleStyle(state: boolean): void {
+    toggleStyle(state: boolean) {
         this.useRedBack = state;
     }
 
-    showDetails(author: Author): void {
+    showDetails(author: Author) {
         alert(JSON.stringify(author));
     }
 
-    getHello(hello: string): void {
+    getHello(hello: string) {
         alert(hello);
     }
 
-    event1(): void {
+    event1() {
         alert("Event 1");
     }
 
-    event2(): void {
+    event2() {
         alert("Event 2");
     }
 }

@@ -10,7 +10,7 @@ export class RepositoryService {
         return this.dict[key];
     }
 
-    set(key: string, value: string): void {
+    set(key: string, value: string) {
         this.dict[key] = value;
     }
 }

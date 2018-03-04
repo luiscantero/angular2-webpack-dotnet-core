@@ -26,7 +26,7 @@ export class AuthorSearchComponent implements OnInit {
         private router: Router) { }
 
     // Push search term into observable stream.
-    search(term: string): void { this.searchSubject.next(term); }
+    search(term: string) { this.searchSubject.next(term); }
 
     ngOnInit(): void {
         this.authors = this.searchSubject
@@ -62,7 +62,7 @@ export class AuthorSearchComponent implements OnInit {
             });
     }
 
-    gotoDetails(author: Author): void {
+    gotoDetails(author: Author) {
         //alert(author.name);
         let link = ['/details', author.name];
         this.router.navigate(link);
