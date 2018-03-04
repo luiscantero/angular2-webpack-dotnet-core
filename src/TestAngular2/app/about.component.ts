@@ -8,8 +8,8 @@ import { RepositoryService } from './repository.service';
 
 @Component({
     selector: 'my-about',
-    template: require('to-string-loader!./about.component.html'),
-    styles: [require('to-string-loader!./about.component.css')],
+    templateUrl: './about.component.html',
+    styleUrls: ['./about.component.css'],
     providers: [AuthorService],
 })
 export class AboutComponent implements OnInit, OnDestroy {

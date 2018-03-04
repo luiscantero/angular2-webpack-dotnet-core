@@ -20,8 +20,8 @@ module.exports = {
             {
                 test: /\.ts$/,
                 use: [
-                    { loader: 'awesome-typescript-loader' },
-                    { loader: 'angular2-template-loader' },
+                    'awesome-typescript-loader',
+                    'angular2-template-loader',
                 ]
             },
             {
@@ -39,13 +39,16 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                exclude: helpers.root('src', 'app'),
+                exclude: helpers.root('app'),
                 use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader?source-map' })
             },
             {
                 test: /\.css$/,
-                include: helpers.root('src', 'app'),
-                use: { loader: 'raw-loader' }
+                include: helpers.root('app'),
+                use: [
+                    'to-string-loader',
+                    'css-loader',
+                ]
             }
         ]
     },

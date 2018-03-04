@@ -3,8 +3,8 @@ import './rxjs-extensions';
 
 @Component({
     selector: 'my-app',
-    template: require('to-string-loader!./app.component.html'),
-    styles: [require('to-string-loader!./app.component.css')],
+    templateUrl: './app.component.html',
+    styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
     title = "Angular 5 Test";

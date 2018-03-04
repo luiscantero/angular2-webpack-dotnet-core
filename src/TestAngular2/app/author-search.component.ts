@@ -10,8 +10,8 @@ import { Author } from './author.model';
 
 @Component({
     selector: 'author-search',
-    template: require('to-string-loader!./author-search.component.html'),
-    providers: [AuthorSearchService]
+    templateUrl: './author-search.component.html',
+    providers: [AuthorSearchService],
 })
 export class AuthorSearchComponent implements OnInit {
     authors: Observable<Author[]>;
