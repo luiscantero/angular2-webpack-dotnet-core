@@ -5,6 +5,8 @@ var helpers = require('./helpers');
 var webpack = require('webpack');
 
 module.exports = webpackMerge(commonConfig, {
+    //mode: 'development',
+
     output: {
         path: helpers.root('./wwwroot'),
         publicPath: '/',

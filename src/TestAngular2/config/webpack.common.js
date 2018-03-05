@@ -74,5 +74,17 @@ module.exports = {
         //    $: 'jquery',
         //    jquery: 'jquery'
         //}),
-    ]
+    ],
+
+    //optimization: {
+    //    splitChunks: {
+    //        cacheGroups: {
+    //            vendors: {
+    //                name: "vendors",
+    //                test: "vendors",
+    //                enforce: true
+    //            },
+    //        }
+    //    }
+    //}
 };
