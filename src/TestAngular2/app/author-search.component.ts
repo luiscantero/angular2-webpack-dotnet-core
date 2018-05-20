@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
-import { Observable } from 'rxjs/Observable';
-import { Subject } from 'rxjs/Subject';
+import { Observable, of } from 'rxjs';
+import { Subject } from 'rxjs';
+import { debounceTime, distinctUntilChanged, switchMap, catchError } from 'rxjs/operators';
 
 import { AuthorSearchService } from './author-search.service';
 import { Author } from './author.model';
@@ -31,35 +32,37 @@ export class AuthorSearchComponent implements OnInit {
     ngOnInit(): void {
         this.authors = this.searchSubject
             .asObservable()           // Cast to Observable.
-            .debounceTime(300)        // Wait 300 ms after input finished.
-            .distinctUntilChanged()   // Ignore if same as previous.
-            .switchMap((term: string) => term // Switch to new observable each time.
+            .pipe(
+            debounceTime(300),        // Wait 300 ms after input finished.
+            distinctUntilChanged(),   // Ignore if same as previous.
+            switchMap((term: string) => term // Switch to new observable each time.
                 // Return http search observable.
                 ? this.authorSearchService.search(term)
                 // or empty observable if no search term.
-                : Observable.of<Author[]>([]))
-            .catch((error: string) => {
+                : of<Author[]>([])),
+            catchError((error: string) => {
                 // Todo: Real error handling.
                 console.log(error);
-                return Observable.of<Author[]>([]);
-            });
+                return of<Author[]>([]);
+            }));
 
         this.terms = this.term.valueChanges
-            .debounceTime(300)        // Wait 300 ms after input finished.
-            .distinctUntilChanged()   // Ignore if same as previous.
-            .switchMap((term: string) => term // Switch to new observable each time.
+            .pipe(
+            debounceTime(300),      // Wait 300 ms after input finished.
+            distinctUntilChanged(),   // Ignore if same as previous.
+            switchMap((term: string) => term // Switch to new observable each time.
                 // Return search observable.
                 ? ((term: string): Observable<string[]> => {
                     this.allTerms.splice(0, 0, term); // Push to beginning.
-                    return Observable.of<string[]>(this.allTerms);
+                    return of<string[]>(this.allTerms);
                 })(term)
                 // or empty observable if no search term.
-                : Observable.of<string[]>([]))
-            .catch((error: string) => {
+                : of<string[]>([])),
+            catchError((error: string) => {
                 // Todo: Real error handling.
                 console.log(error);
-                return Observable.of<string[]>([]);
-            });
+                return of<string[]>([]);
+            }));
     }
 
     gotoDetails(author: Author) {

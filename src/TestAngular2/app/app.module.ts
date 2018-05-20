@@ -12,11 +12,10 @@ import { MaterialModule }  from './material.module';
 import { IntroComponent }  from './intro.component';
 import { AboutComponent }  from './about.component';
 import { AuthorDetailsComponent } from './author-details.component';
-import { MyUppercasePipe } from './myuppercase.pipe';
+import { MyUppercasePipe } from './my-uppercase.pipe';
 import { NestmeComponent } from './nestme.component';
 import { AlertOnClickDirective } from './alert.directive';
 import { AuthorSearchComponent } from './author-search.component';
-import { RepositoryService } from './repository.service';
 
 @NgModule({
     imports: [
@@ -38,7 +37,7 @@ import { RepositoryService } from './repository.service';
         AlertOnClickDirective,
         AuthorSearchComponent,
     ],
-    providers: [RepositoryService],
+    providers: [],
     bootstrap: [ AppComponent ]
 })
 export class AppModule { }

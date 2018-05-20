@@ -10,7 +10,7 @@ import { RepositoryService } from './repository.service';
     selector: 'my-about',
     templateUrl: './about.component.html',
     styleUrls: ['./about.component.css'],
-    providers: [AuthorService],
+    providers: [],
 })
 export class AboutComponent implements OnInit, OnDestroy {
     msg = "Hello from about!";
@@ -51,8 +51,8 @@ export class AboutComponent implements OnInit, OnDestroy {
         alert(JSON.stringify(author));
     }
 
-    getHello(hello: string) {
-        alert(hello);
+    showValue(value: string) {
+        alert(value);
     }
 
     event1() {

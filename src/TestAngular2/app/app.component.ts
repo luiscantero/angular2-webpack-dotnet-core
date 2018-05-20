@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import './rxjs-extensions';
 
 @Component({
     selector: 'my-app',
@@ -7,5 +6,5 @@ import './rxjs-extensions';
     styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-    title = "Angular 5 Test";
+    title = "Angular 6 Test";
 }

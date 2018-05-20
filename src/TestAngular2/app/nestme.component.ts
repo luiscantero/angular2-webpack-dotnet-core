@@ -1,4 +1,5 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { setTimeout } from 'core-js';
 
 @Component({
     selector: 'nest-me',
@@ -7,10 +8,12 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
 })
 export class NestmeComponent {
     // Public API.
-    @Input() myName: string;
-    @Output() sendHello = new EventEmitter();
+    @Input() myNumber: number;
+    @Output() valueReady = new EventEmitter();
 
-    sayHello() {
-        this.sendHello.emit("Hello " + this.myName);
+    timesTwo() {
+        setTimeout(
+            () => this.valueReady.emit(this.myNumber * 2),
+            2000); // ms.
     }
 }

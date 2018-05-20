@@ -37,7 +37,7 @@
     <div>About: {{msg | myUppercase}}</div>
     <hr />
     <div alertOnClick="This is the param">This is the content</div>
-    <div><nest-me [myName]="'Bill'" (sendHello)="getHello($event)"></nest-me></div>
+    <div><nest-me [myNumber]="1234" (valueReady)="showValue($event)"></nest-me></div>
     <hr />
     <input value="{{author.name}}" placeholder="Interpolation" />
     <input [ngModel]="author.name" placeholder="One-way biding" />

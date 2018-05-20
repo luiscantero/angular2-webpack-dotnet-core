@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <TypeScriptToolsVersion>2.3</TypeScriptToolsVersion>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,8 +12,44 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.5" />
-    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.8" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="app\about.component.css">
+      <DependentUpon>about.component.html</DependentUpon>
+    </None>
+    <None Update="app\about.component.ts">
+      <DependentUpon>about.component.html</DependentUpon>
+    </None>
+    <None Update="app\app.component.css">
+      <DependentUpon>app.component.html</DependentUpon>
+    </None>
+    <None Update="app\app.component.ts">
+      <DependentUpon>app.component.html</DependentUpon>
+    </None>
+    <None Update="app\author-details.component.css">
+      <DependentUpon>author-details.component.html</DependentUpon>
+    </None>
+    <None Update="app\author-details.component.ts">
+      <DependentUpon>author-details.component.html</DependentUpon>
+    </None>
+    <None Update="app\author-search.component.ts">
+      <DependentUpon>author-search.component.html</DependentUpon>
+    </None>
+    <None Update="app\intro.component.css">
+      <DependentUpon>intro.component.html</DependentUpon>
+    </None>
+    <None Update="app\intro.component.ts">
+      <DependentUpon>intro.component.html</DependentUpon>
+    </None>
+    <None Update="app\nestme.component.css">
+      <DependentUpon>nestme.component.html</DependentUpon>
+    </None>
+    <None Update="app\nestme.component.ts">
+      <DependentUpon>nestme.component.html</DependentUpon>
+    </None>
   </ItemGroup>
 
 </Project>
