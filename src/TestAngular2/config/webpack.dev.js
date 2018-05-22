@@ -9,7 +9,7 @@ module.exports = webpackMerge(commonConfig, {
 
     output: {
         path: helpers.root('./wwwroot'),
-        publicPath: '/',
+        publicPath: '',
         filename: '[name].js',
         chunkFilename: '[id].chunk.js'
     },
