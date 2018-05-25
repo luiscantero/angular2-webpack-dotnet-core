@@ -12,7 +12,7 @@ import { MaterialModule }  from './material.module';
 import { IntroComponent }  from './intro.component';
 import { AboutComponent }  from './about.component';
 import { AuthorDetailsComponent } from './author-details.component';
-import { MyUppercasePipe } from './my-uppercase.pipe';
+import { LocaleDatetimePipe } from './locale-datetime.pipe';
 import { NestmeComponent } from './nestme.component';
 import { AlertOnClickDirective } from './alert.directive';
 import { AuthorSearchComponent } from './author-search.component';
@@ -32,7 +32,7 @@ import { AuthorSearchComponent } from './author-search.component';
         IntroComponent,
         AboutComponent,
         AuthorDetailsComponent,
-        MyUppercasePipe,
+        LocaleDatetimePipe,
         NestmeComponent,
         AlertOnClickDirective,
         AuthorSearchComponent,

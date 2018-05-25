@@ -17,7 +17,7 @@ export class AboutComponent implements OnInit, OnDestroy {
     useRedBack = false;
     repo: string;
     authors: Author[];
-    author: Author = new Author("Bill", 20);
+    author: any = { name: "Bill", age: 20 };
 
     constructor(private router: Router,
         private authorService: AuthorService,

@@ -4,8 +4,8 @@
   "description": "Angular 6 demo using webpack",
   "main": "main.js",
   "scripts": {
-    "build:dev": "rimraf wwwroot/*** && webpack --config config/webpack.dev.js --progress --profile && copyfiles mock-authors.json favicon.ico wwwroot",
-    "build:prod": "rimraf wwwroot/*** && webpack --config config/webpack.prod.js --progress --profile --bail && copyfiles mock-authors.json favicon.ico wwwroot",
+    "build:dev": "rimraf wwwroot/* && webpack --config config/webpack.dev.js --progress --profile && copyfiles mock-authors.json favicon.ico wwwroot",
+    "build:prod": "rimraf wwwroot/* && webpack --config config/webpack.prod.js --progress --profile --bail && copyfiles mock-authors.json favicon.ico wwwroot",
     "start": "webpack-dev-server --config config/webpack.dev.js --inline --progress --port 3000",
     "electron": "electron .",
     "electron-aot": "npm run build:prod && electron .",

@@ -29,12 +29,14 @@
         {{refVar2.value}}
     </form>
     <hr />
-    <div>About: {{msg | lowercase}}</div>
-    <div>About: {{msg | lowercase | uppercase}}</div>
-    <div>About: {{.99 | percent}}</div>
-    <div>About: {{123.45 | currency:'EUR'}}</div>
-    <div>About: {{author | json}}</div>
-    <div>About: {{msg | myUppercase}}</div>
+    <div>{{msg}}</div>
+    <div>{{msg | lowercase}}</div>
+    <div>{{msg | lowercase | uppercase}}</div>
+    <div>{{.99 | percent}}</div>
+    <div>{{123.45 | currency:'EUR'}}</div>
+    <div>{{'2018-05-25T08:59:24.079Z' | date:'full'}}</div>
+    <div>{{author | json}}</div>
+    <div>{{'2018-05-25T08:59:24.079Z' | localedatetime}}</div>
     <hr />
     <div alertOnClick="This is the param">This is the content</div>
     <div><nest-me [myNumber]="1234" (valueReady)="showValue($event)"></nest-me></div>
