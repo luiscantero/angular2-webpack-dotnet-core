@@ -13,7 +13,7 @@
     <div [textContent]="'About2: ' + [msg]"></div>
     <div (click)="event1()">Event 1</div>
     <div><button on-click="event2()" mat-raised-button color="primary">Event 2</button></div>
-    <input [(ngModel)]="msg" placeholder="Message" minlength="4" required />
+    <input [(ngModel)]="msg" placeholder="Message" minlength="4" required />&nbsp;
     <input bindon-ngModel="msg" placeholder="Message" minlength="4" required #spy />
     <div>{{spy.className}}</div>
     <hr />
@@ -41,9 +41,9 @@
     <div alertOnClick="This is the param">This is the content</div>
     <div><nest-me [myNumber]="1234" (valueReady)="showValue($event)"></nest-me></div>
     <hr />
-    <input value="{{author.name}}" placeholder="Interpolation" />
-    <input [ngModel]="author.name" placeholder="One-way biding" />
-    <input [(ngModel)]="author.name" placeholder="Two-way biding" minlength="4" />
+    <input value="{{author.name}}" placeholder="Interpolation" />&nbsp;
+    <input [ngModel]="author.name" placeholder="One-way biding" />&nbsp;
+    <input [(ngModel)]="author.name" placeholder="Two-way biding" minlength="4" />&nbsp;
     <input [(ngModel)]="author.name" placeholder="Two-way biding" minlength="4" />
     <hr />
     <input [(ngModel)]="repo" placeholder="Repository" />
@@ -53,4 +53,14 @@
     </div>
     <hr />
     <author-search></author-search>
+    <hr />
+    <div>
+        <button (click)="addAuthor()" mat-raised-button>Add new author</button>&nbsp;
+        <button (click)="clearAuthors()" mat-raised-button>Clear authors</button>&nbsp;
+        <span>Last updated: {{lastUpdate | async | localedatetime}}</span>
+    </div>
+    <div *ngFor="let author of reduxAuthors | async">
+        <div>{{author.name}} ({{author.age}})</div>
+    </div>
+    <hr />
 </section>
