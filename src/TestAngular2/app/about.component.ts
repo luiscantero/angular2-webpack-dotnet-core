@@ -6,8 +6,8 @@ import { AuthorService } from './author.service';
 
 import { RepositoryService } from './repository.service';
 
-import { NgRedux, NgReduxModule, select } from '@angular-redux/store';
-import { IAppState, reducer, INITIAL_STATE, ADD_ITEM, REMOVE_ITEM, REMOVE_ALL_ITEMS } from './store';
+import { NgRedux, select } from '@angular-redux/store';
+import { IAppState, ADD_ITEM, REMOVE_ITEM, REMOVE_ALL_ITEMS } from './store';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -28,9 +28,7 @@ export class AboutComponent implements OnInit, OnDestroy {
     constructor(private router: Router,
         private authorService: AuthorService,
         private repoSvc: RepositoryService,
-        private ngRedux: NgRedux<IAppState>) {
-        ngRedux.configureStore(reducer, INITIAL_STATE);
-    }
+        private ngRedux: NgRedux<IAppState>) { }
 
     ngOnInit(): void {
         this.authorService.getAuthors()
