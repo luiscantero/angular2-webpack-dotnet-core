@@ -68,7 +68,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_platform_browser__ = __webpack_require__(47);
 /**
- * @license Angular v6.0.3
+ * @license Angular v6.0.9
  * (c) 2010-2018 Google, Inc. https://angular.io/
  * License: MIT
  */
@@ -90,7 +90,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
  *
  * Take care not to evaluate this in non-browser contexts.
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 var BrowserXhr = /** @class */ (function () {
     function BrowserXhr() {
@@ -112,25 +112,10 @@ var BrowserXhr = /** @class */ (function () {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @license
- * Copyright Google Inc. All Rights Reserved.
- *
- * Use of this source code is governed by an MIT-style license that can be
- * found in the LICENSE file at https://angular.io/license
- */
-/**
  * Supported http methods.
- * @deprecated use @angular/common/http instead
- */
-/**
- * Supported http methods.
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 var RequestMethod;
-/**
- * Supported http methods.
- * @deprecated use @angular/common/http instead
- */
 (function (RequestMethod) {
     RequestMethod[RequestMethod["Get"] = 0] = "Get";
     RequestMethod[RequestMethod["Post"] = 1] = "Post";
@@ -144,21 +129,9 @@ var RequestMethod;
  * All possible states in which a connection can be, based on
  * [States](http://www.w3.org/TR/XMLHttpRequest/#states) from the `XMLHttpRequest` spec, but with an
  * additional "CANCELLED" state.
- * @deprecated use @angular/common/http instead
- */
-/**
- * All possible states in which a connection can be, based on
- * [States](http://www.w3.org/TR/XMLHttpRequest/#states) from the `XMLHttpRequest` spec, but with an
- * additional "CANCELLED" state.
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 var ReadyState;
-/**
- * All possible states in which a connection can be, based on
- * [States](http://www.w3.org/TR/XMLHttpRequest/#states) from the `XMLHttpRequest` spec, but with an
- * additional "CANCELLED" state.
- * @deprecated use @angular/common/http instead
- */
 (function (ReadyState) {
     ReadyState[ReadyState["Unsent"] = 0] = "Unsent";
     ReadyState[ReadyState["Open"] = 1] = "Open";
@@ -170,19 +143,9 @@ var ReadyState;
 /**
  * Acceptable response types to be associated with a {@link Response}, based on
  * [ResponseType](https://fetch.spec.whatwg.org/#responsetype) from the Fetch spec.
- * @deprecated use @angular/common/http instead
- */
-/**
- * Acceptable response types to be associated with a {@link Response}, based on
- * [ResponseType](https://fetch.spec.whatwg.org/#responsetype) from the Fetch spec.
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 var ResponseType;
-/**
- * Acceptable response types to be associated with a {@link Response}, based on
- * [ResponseType](https://fetch.spec.whatwg.org/#responsetype) from the Fetch spec.
- * @deprecated use @angular/common/http instead
- */
 (function (ResponseType) {
     ResponseType[ResponseType["Basic"] = 0] = "Basic";
     ResponseType[ResponseType["Cors"] = 1] = "Cors";
@@ -192,17 +155,9 @@ var ResponseType;
 })(ResponseType || (ResponseType = {}));
 /**
  * Supported content type to be automatically associated with a {@link Request}.
- * @deprecated use @angular/common/http instead
- */
-/**
- * Supported content type to be automatically associated with a {@link Request}.
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 var ContentType;
-/**
- * Supported content type to be automatically associated with a {@link Request}.
- * @deprecated use @angular/common/http instead
- */
 (function (ContentType) {
     ContentType[ContentType["NONE"] = 0] = "NONE";
     ContentType[ContentType["JSON"] = 1] = "JSON";
@@ -214,17 +169,9 @@ var ContentType;
 })(ContentType || (ContentType = {}));
 /**
  * Define which buffer to use to store the response
- * @deprecated use @angular/common/http instead
- */
-/**
- * Define which buffer to use to store the response
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 var ResponseContentType;
-/**
- * Define which buffer to use to store the response
- * @deprecated use @angular/common/http instead
- */
 (function (ResponseContentType) {
     ResponseContentType[ResponseContentType["Text"] = 0] = "Text";
     ResponseContentType[ResponseContentType["Json"] = 1] = "Json";
@@ -265,7 +212,7 @@ var ResponseContentType;
  * console.log(thirdHeaders.get('X-My-Custom-Header')); //'Angular'
  * ```
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 var Headers = /** @class */ (function () {
     // TODO(vicb): any -> string|string[]
@@ -293,13 +240,7 @@ var Headers = /** @class */ (function () {
     /**
      * Returns a new Headers instance from the given DOMString of Response Headers
      */
-    /**
-       * Returns a new Headers instance from the given DOMString of Response Headers
-       */
-    Headers.fromResponseHeaderString = /**
-       * Returns a new Headers instance from the given DOMString of Response Headers
-       */
-    function (headersString) {
+    Headers.fromResponseHeaderString = function (headersString) {
         var headers = new Headers();
         headersString.split('\n').forEach(function (line) {
             var index = line.indexOf(':');
@@ -314,13 +255,7 @@ var Headers = /** @class */ (function () {
     /**
      * Appends a header to existing list of header values for a given header name.
      */
-    /**
-       * Appends a header to existing list of header values for a given header name.
-       */
-    Headers.prototype.append = /**
-       * Appends a header to existing list of header values for a given header name.
-       */
-    function (name, value) {
+    Headers.prototype.append = function (name, value) {
         var values = this.getAll(name);
         if (values === null) {
             this.set(name, value);
@@ -332,13 +267,7 @@ var Headers = /** @class */ (function () {
     /**
      * Deletes all header values for the given name.
      */
-    /**
-       * Deletes all header values for the given name.
-       */
-    Headers.prototype.delete = /**
-       * Deletes all header values for the given name.
-       */
-    function (name) {
+    Headers.prototype.delete = function (name) {
         var lcName = name.toLowerCase();
         this._normalizedNames.delete(lcName);
         this._headers.delete(lcName);
@@ -350,13 +279,7 @@ var Headers = /** @class */ (function () {
     /**
      * Returns first header that matches given name.
      */
-    /**
-       * Returns first header that matches given name.
-       */
-    Headers.prototype.get = /**
-       * Returns first header that matches given name.
-       */
-    function (name) {
+    Headers.prototype.get = function (name) {
         var values = this.getAll(name);
         if (values === null) {
             return null;
@@ -366,33 +289,15 @@ var Headers = /** @class */ (function () {
     /**
      * Checks for existence of header by given name.
      */
-    /**
-       * Checks for existence of header by given name.
-       */
-    Headers.prototype.has = /**
-       * Checks for existence of header by given name.
-       */
-    function (name) { return this._headers.has(name.toLowerCase()); };
+    Headers.prototype.has = function (name) { return this._headers.has(name.toLowerCase()); };
     /**
      * Returns the names of the headers
      */
-    /**
-       * Returns the names of the headers
-       */
-    Headers.prototype.keys = /**
-       * Returns the names of the headers
-       */
-    function () { return Array.from(this._normalizedNames.values()); };
+    Headers.prototype.keys = function () { return Array.from(this._normalizedNames.values()); };
     /**
      * Sets or overrides header value for given name.
      */
-    /**
-       * Sets or overrides header value for given name.
-       */
-    Headers.prototype.set = /**
-       * Sets or overrides header value for given name.
-       */
-    function (name, value) {
+    Headers.prototype.set = function (name, value) {
         if (Array.isArray(value)) {
             if (value.length) {
                 this._headers.set(name.toLowerCase(), [value.join(',')]);
@@ -406,26 +311,12 @@ var Headers = /** @class */ (function () {
     /**
      * Returns values of all headers.
      */
-    /**
-       * Returns values of all headers.
-       */
-    Headers.prototype.values = /**
-       * Returns values of all headers.
-       */
-    function () { return Array.from(this._headers.values()); };
+    Headers.prototype.values = function () { return Array.from(this._headers.values()); };
     /**
      * Returns string of all headers.
      */
     // TODO(vicb): returns {[name: string]: string[]}
-    /**
-       * Returns string of all headers.
-       */
-    // TODO(vicb): returns {[name: string]: string[]}
-    Headers.prototype.toJSON = /**
-       * Returns string of all headers.
-       */
-    // TODO(vicb): returns {[name: string]: string[]}
-    function () {
+    Headers.prototype.toJSON = function () {
         var _this = this;
         var serialized = {};
         this._headers.forEach(function (values, name) {
@@ -438,25 +329,13 @@ var Headers = /** @class */ (function () {
     /**
      * Returns list of header values for a given name.
      */
-    /**
-       * Returns list of header values for a given name.
-       */
-    Headers.prototype.getAll = /**
-       * Returns list of header values for a given name.
-       */
-    function (name) {
+    Headers.prototype.getAll = function (name) {
         return this.has(name) ? this._headers.get(name.toLowerCase()) || null : null;
     };
     /**
      * This method is not implemented.
      */
-    /**
-       * This method is not implemented.
-       */
-    Headers.prototype.entries = /**
-       * This method is not implemented.
-       */
-    function () { throw new Error('"entries" method is not implemented on Headers class'); };
+    Headers.prototype.entries = function () { throw new Error('"entries" method is not implemented on Headers class'); };
     Headers.prototype.mayBeSetNormalizedName = function (name) {
         var lcName = name.toLowerCase();
         if (!this._normalizedNames.has(lcName)) {
@@ -486,7 +365,7 @@ var Headers = /** @class */ (function () {
  * This class may be used in tests to build {@link Response Responses} for
  * mock responses (see {@link MockBackend}).
  *
- * ### Example ([live demo](http://plnkr.co/edit/P9Jkk8e8cz6NVzbcxEsD?p=preview))
+ * ### Example
  *
  * ```typescript
  * import {ResponseOptions, Response} from '@angular/http';
@@ -499,7 +378,7 @@ var Headers = /** @class */ (function () {
  * console.log('res.json():', res.json()); // Object {name: "Jeff"}
  * ```
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 var ResponseOptions = /** @class */ (function () {
     function ResponseOptions(opts) {
@@ -521,7 +400,7 @@ var ResponseOptions = /** @class */ (function () {
      * This may be useful when sharing a base `ResponseOptions` object inside tests,
      * where certain properties may change from test to test.
      *
-     * ### Example ([live demo](http://plnkr.co/edit/1lXquqFfgduTFBWjNoRE?p=preview))
+     * ### Example
      *
      * ```typescript
      * import {ResponseOptions, Response} from '@angular/http';
@@ -537,57 +416,7 @@ var ResponseOptions = /** @class */ (function () {
      * console.log('res.url:', res.url); // https://google.com
      * ```
      */
-    /**
-       * Creates a copy of the `ResponseOptions` instance, using the optional input as values to
-       * override
-       * existing values. This method will not change the values of the instance on which it is being
-       * called.
-       *
-       * This may be useful when sharing a base `ResponseOptions` object inside tests,
-       * where certain properties may change from test to test.
-       *
-       * ### Example ([live demo](http://plnkr.co/edit/1lXquqFfgduTFBWjNoRE?p=preview))
-       *
-       * ```typescript
-       * import {ResponseOptions, Response} from '@angular/http';
-       *
-       * var options = new ResponseOptions({
-       *   body: {name: 'Jeff'}
-       * });
-       * var res = new Response(options.merge({
-       *   url: 'https://google.com'
-       * }));
-       * console.log('options.url:', options.url); // null
-       * console.log('res.json():', res.json()); // Object {name: "Jeff"}
-       * console.log('res.url:', res.url); // https://google.com
-       * ```
-       */
-    ResponseOptions.prototype.merge = /**
-       * Creates a copy of the `ResponseOptions` instance, using the optional input as values to
-       * override
-       * existing values. This method will not change the values of the instance on which it is being
-       * called.
-       *
-       * This may be useful when sharing a base `ResponseOptions` object inside tests,
-       * where certain properties may change from test to test.
-       *
-       * ### Example ([live demo](http://plnkr.co/edit/1lXquqFfgduTFBWjNoRE?p=preview))
-       *
-       * ```typescript
-       * import {ResponseOptions, Response} from '@angular/http';
-       *
-       * var options = new ResponseOptions({
-       *   body: {name: 'Jeff'}
-       * });
-       * var res = new Response(options.merge({
-       *   url: 'https://google.com'
-       * }));
-       * console.log('options.url:', options.url); // null
-       * console.log('res.json():', res.json()); // Object {name: "Jeff"}
-       * console.log('res.url:', res.url); // https://google.com
-       * ```
-       */
-    function (options) {
+    ResponseOptions.prototype.merge = function (options) {
         return new ResponseOptions({
             body: options && options.body != null ? options.body : this.body,
             status: options && options.status != null ? options.status : this.status,
@@ -610,7 +439,7 @@ var ResponseOptions = /** @class */ (function () {
  * when configuring an {@link Injector}, in order to override the default options
  * used by {@link Http} to create {@link Response Responses}.
  *
- * ### Example ([live demo](http://plnkr.co/edit/qv8DLT?p=preview))
+ * ### Example
  *
  * ```typescript
  * import {provide} from '@angular/core';
@@ -629,7 +458,7 @@ var ResponseOptions = /** @class */ (function () {
  * The options could also be extended when manually creating a {@link Response}
  * object.
  *
- * ### Example ([live demo](http://plnkr.co/edit/VngosOWiaExEtbstDoix?p=preview))
+ * ### Example
  *
  * ```
  * import {BaseResponseOptions, Response} from '@angular/http';
@@ -643,7 +472,7 @@ var ResponseOptions = /** @class */ (function () {
  * console.log('res.text():', res.text()); // Angular;
  * ```
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 var BaseResponseOptions = /** @class */ (function (_super) {
     Object(__WEBPACK_IMPORTED_MODULE_1_tslib__["b" /* __extends */])(BaseResponseOptions, _super);
@@ -671,7 +500,7 @@ var BaseResponseOptions = /** @class */ (function (_super) {
  * The primary purpose of a `ConnectionBackend` is to create new connections to fulfill a given
  * {@link Request}.
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 var ConnectionBackend = /** @class */ (function () {
     function ConnectionBackend() {
@@ -681,7 +510,7 @@ var ConnectionBackend = /** @class */ (function () {
 /**
  * Abstract class from which real connections are derived.
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 var Connection = /** @class */ (function () {
     function Connection() {
@@ -691,7 +520,7 @@ var Connection = /** @class */ (function () {
 /**
  * An XSRFStrategy configures XSRF protection (e.g. via headers) on an HTTP request.
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 var XSRFStrategy = /** @class */ (function () {
     function XSRFStrategy() {
@@ -737,7 +566,6 @@ function getResponseURL(xhr) {
     }
     return null;
 }
-
 function stringToArrayBuffer(input) {
     var view = new Uint16Array(input.length);
     for (var i = 0, strLen = input.length; i < strLen; i++) {
@@ -769,7 +597,7 @@ function paramParser(rawParams) {
     return map;
 }
 /**
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  **/
 var QueryEncoder = /** @class */ (function () {
     function QueryEncoder() {
@@ -823,7 +651,7 @@ function standardEncoding(v) {
  *
  * let params = new URLSearchParams('', new MyQueryEncoder());
  * ```
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 var URLSearchParams = /** @class */ (function () {
     function URLSearchParams(rawParams, queryEncoder) {
@@ -860,20 +688,7 @@ var URLSearchParams = /** @class */ (function () {
     // E.g: "a=[1,2,3], c=[8]" + "a=[4,5,6], b=[7]" = "a=[4], c=[8], b=[7]"
     //
     // TODO(@caitp): document this better
-    // A merge operation
-    // For each name-values pair in `searchParams`, perform `set(name, values[0])`
-    //
-    // E.g: "a=[1,2,3], c=[8]" + "a=[4,5,6], b=[7]" = "a=[4], c=[8], b=[7]"
-    //
-    // TODO(@caitp): document this better
-    URLSearchParams.prototype.setAll = 
-    // A merge operation
-    // For each name-values pair in `searchParams`, perform `set(name, values[0])`
-    //
-    // E.g: "a=[1,2,3], c=[8]" + "a=[4,5,6], b=[7]" = "a=[4], c=[8], b=[7]"
-    //
-    // TODO(@caitp): document this better
-    function (searchParams) {
+    URLSearchParams.prototype.setAll = function (searchParams) {
         var _this = this;
         searchParams.paramsMap.forEach(function (value, param) {
             var list = _this.paramsMap.get(param) || [];
@@ -896,22 +711,7 @@ var URLSearchParams = /** @class */ (function () {
     // E.g: "a=[1,2], c=[8]" + "a=[3,4], b=[7]" = "a=[1,2,3,4], c=[8], b=[7]"
     //
     // TODO(@caitp): document this better
-    // A merge operation
-    // For each name-values pair in `searchParams`, perform `append(name, value)`
-    // for each value in `values`.
-    //
-    // E.g: "a=[1,2], c=[8]" + "a=[3,4], b=[7]" = "a=[1,2,3,4], c=[8], b=[7]"
-    //
-    // TODO(@caitp): document this better
-    URLSearchParams.prototype.appendAll = 
-    // A merge operation
-    // For each name-values pair in `searchParams`, perform `append(name, value)`
-    // for each value in `values`.
-    //
-    // E.g: "a=[1,2], c=[8]" + "a=[3,4], b=[7]" = "a=[1,2,3,4], c=[8], b=[7]"
-    //
-    // TODO(@caitp): document this better
-    function (searchParams) {
+    URLSearchParams.prototype.appendAll = function (searchParams) {
         var _this = this;
         searchParams.paramsMap.forEach(function (value, param) {
             var list = _this.paramsMap.get(param) || [];
@@ -928,22 +728,7 @@ var URLSearchParams = /** @class */ (function () {
     // E.g: "a=[1,2,3], c=[8]" + "a=[4,5,6], b=[7]" = "a=[4,5,6], c=[8], b=[7]"
     //
     // TODO(@caitp): document this better
-    // A merge operation
-    // For each name-values pair in `searchParams`, perform `delete(name)`,
-    // followed by `set(name, values)`
-    //
-    // E.g: "a=[1,2,3], c=[8]" + "a=[4,5,6], b=[7]" = "a=[4,5,6], c=[8], b=[7]"
-    //
-    // TODO(@caitp): document this better
-    URLSearchParams.prototype.replaceAll = 
-    // A merge operation
-    // For each name-values pair in `searchParams`, perform `delete(name)`,
-    // followed by `set(name, values)`
-    //
-    // E.g: "a=[1,2,3], c=[8]" + "a=[4,5,6], b=[7]" = "a=[4,5,6], c=[8], b=[7]"
-    //
-    // TODO(@caitp): document this better
-    function (searchParams) {
+    URLSearchParams.prototype.replaceAll = function (searchParams) {
         var _this = this;
         searchParams.paramsMap.forEach(function (value, param) {
             var list = _this.paramsMap.get(param) || [];
@@ -958,9 +743,7 @@ var URLSearchParams = /** @class */ (function () {
         var _this = this;
         var paramsList = [];
         this.paramsMap.forEach(function (values, k) {
-            values.forEach(function (v) {
-                return paramsList.push(_this.queryEncoder.encodeKey(k) + '=' + _this.queryEncoder.encodeValue(v));
-            });
+            values.forEach(function (v) { return paramsList.push(_this.queryEncoder.encodeKey(k) + '=' + _this.queryEncoder.encodeValue(v)); });
         });
         return paramsList.join('&');
     };
@@ -985,13 +768,7 @@ var Body = /** @class */ (function () {
     /**
      * Attempts to return body as parsed `JSON` object, or raises an exception.
      */
-    /**
-       * Attempts to return body as parsed `JSON` object, or raises an exception.
-       */
-    Body.prototype.json = /**
-       * Attempts to return body as parsed `JSON` object, or raises an exception.
-       */
-    function () {
+    Body.prototype.json = function () {
         if (typeof this._body === 'string') {
             return JSON.parse(this._body);
         }
@@ -1014,35 +791,7 @@ var Body = /** @class */ (function () {
      *
      * - `iso-8859` - interpret the bytes as ISO-8859 (which can be used for ASCII encoded text).
      */
-    /**
-       * Returns the body as a string, presuming `toString()` can be called on the response body.
-       *
-       * When decoding an `ArrayBuffer`, the optional `encodingHint` parameter determines how the
-       * bytes in the buffer will be interpreted. Valid values are:
-       *
-       * - `legacy` - incorrectly interpret the bytes as UTF-16 (technically, UCS-2). Only characters
-       *   in the Basic Multilingual Plane are supported, surrogate pairs are not handled correctly.
-       *   In addition, the endianness of the 16-bit octet pairs in the `ArrayBuffer` is not taken
-       *   into consideration. This is the default behavior to avoid breaking apps, but should be
-       *   considered deprecated.
-       *
-       * - `iso-8859` - interpret the bytes as ISO-8859 (which can be used for ASCII encoded text).
-       */
-    Body.prototype.text = /**
-       * Returns the body as a string, presuming `toString()` can be called on the response body.
-       *
-       * When decoding an `ArrayBuffer`, the optional `encodingHint` parameter determines how the
-       * bytes in the buffer will be interpreted. Valid values are:
-       *
-       * - `legacy` - incorrectly interpret the bytes as UTF-16 (technically, UCS-2). Only characters
-       *   in the Basic Multilingual Plane are supported, surrogate pairs are not handled correctly.
-       *   In addition, the endianness of the 16-bit octet pairs in the `ArrayBuffer` is not taken
-       *   into consideration. This is the default behavior to avoid breaking apps, but should be
-       *   considered deprecated.
-       *
-       * - `iso-8859` - interpret the bytes as ISO-8859 (which can be used for ASCII encoded text).
-       */
-    function (encodingHint) {
+    Body.prototype.text = function (encodingHint) {
         if (encodingHint === void 0) { encodingHint = 'legacy'; }
         if (this._body instanceof URLSearchParams) {
             return this._body.toString();
@@ -1068,13 +817,7 @@ var Body = /** @class */ (function () {
     /**
      * Return the body as an ArrayBuffer
      */
-    /**
-       * Return the body as an ArrayBuffer
-       */
-    Body.prototype.arrayBuffer = /**
-       * Return the body as an ArrayBuffer
-       */
-    function () {
+    Body.prototype.arrayBuffer = function () {
         if (this._body instanceof ArrayBuffer) {
             return this._body;
         }
@@ -1083,13 +826,7 @@ var Body = /** @class */ (function () {
     /**
       * Returns the request's body as a Blob, assuming that body exists.
       */
-    /**
-        * Returns the request's body as a Blob, assuming that body exists.
-        */
-    Body.prototype.blob = /**
-        * Returns the request's body as a Blob, assuming that body exists.
-        */
-    function () {
+    Body.prototype.blob = function () {
         if (this._body instanceof Blob) {
             return this._body;
         }
@@ -1126,19 +863,19 @@ var Body = /** @class */ (function () {
  * can be accessed many times. There are other differences in the implementation, but this is the
  * most significant.
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 var Response = /** @class */ (function (_super) {
     Object(__WEBPACK_IMPORTED_MODULE_1_tslib__["b" /* __extends */])(Response, _super);
     function Response(responseOptions) {
         var _this = _super.call(this) || this;
         _this._body = responseOptions.body;
-        _this.status = (responseOptions.status);
+        _this.status = responseOptions.status;
         _this.ok = (_this.status >= 200 && _this.status <= 299);
         _this.statusText = responseOptions.statusText;
         _this.headers = responseOptions.headers;
-        _this.type = (responseOptions.type);
-        _this.url = (responseOptions.url);
+        _this.type = responseOptions.type;
+        _this.url = responseOptions.url;
         return _this;
     }
     Response.prototype.toString = function () {
@@ -1169,10 +906,7 @@ var BrowserJsonp = /** @class */ (function () {
     function BrowserJsonp() {
     }
     // Construct a <script> element with the specified URL
-    // Construct a <script> element with the specified URL
-    BrowserJsonp.prototype.build = 
-    // Construct a <script> element with the specified URL
-    function (url) {
+    BrowserJsonp.prototype.build = function (url) {
         var node = document.createElement('script');
         node.src = url;
         return node;
@@ -1188,15 +922,9 @@ var BrowserJsonp = /** @class */ (function () {
         connections[id] = null;
     };
     // Attach the <script> element to the DOM
-    // Attach the <script> element to the DOM
-    BrowserJsonp.prototype.send = 
-    // Attach the <script> element to the DOM
-    function (node) { document.body.appendChild((node)); };
+    BrowserJsonp.prototype.send = function (node) { document.body.appendChild((node)); };
     // Remove <script> element from the DOM
-    // Remove <script> element from the DOM
-    BrowserJsonp.prototype.cleanup = 
-    // Remove <script> element from the DOM
-    function (node) {
+    BrowserJsonp.prototype.cleanup = function (node) {
         if (node.parentNode) {
             node.parentNode.removeChild((node));
         }
@@ -1204,8 +932,6 @@ var BrowserJsonp = /** @class */ (function () {
     BrowserJsonp.decorators = [
         { type: __WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"] }
     ];
-    /** @nocollapse */
-    BrowserJsonp.ctorParameters = function () { return []; };
     return BrowserJsonp;
 }());
 
@@ -1221,7 +947,7 @@ var JSONP_ERR_WRONG_METHOD = 'JSONP requests must use GET request method.';
 /**
  * Base class for an in-flight JSONP request.
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 var JSONPConnection = /** @class */ (function () {
     /** @internal */
@@ -1295,15 +1021,7 @@ var JSONPConnection = /** @class */ (function () {
      * Callback called when the JSONP request completes, to notify the application
      * of the new data.
      */
-    /**
-       * Callback called when the JSONP request completes, to notify the application
-       * of the new data.
-       */
-    JSONPConnection.prototype.finished = /**
-       * Callback called when the JSONP request completes, to notify the application
-       * of the new data.
-       */
-    function (data) {
+    JSONPConnection.prototype.finished = function (data) {
         // Don't leak connections
         this._finished = true;
         this._dom.removeConnection(this._id);
@@ -1316,7 +1034,7 @@ var JSONPConnection = /** @class */ (function () {
 /**
  * A {@link ConnectionBackend} that uses the JSONP strategy of making requests.
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 var JSONPBackend = /** @class */ (function (_super) {
     Object(__WEBPACK_IMPORTED_MODULE_1_tslib__["b" /* __extends */])(JSONPBackend, _super);
@@ -1335,8 +1053,8 @@ var JSONPBackend = /** @class */ (function (_super) {
     ];
     /** @nocollapse */
     JSONPBackend.ctorParameters = function () { return [
-        { type: BrowserJsonp, },
-        { type: ResponseOptions, },
+        { type: BrowserJsonp },
+        { type: ResponseOptions }
     ]; };
     return JSONPBackend;
 }(ConnectionBackend));
@@ -1357,7 +1075,7 @@ var XSSI_PREFIX = /^\)\]\}',?\n/;
  * This class would typically not be created or interacted with directly inside applications, though
  * the {@link MockConnection} may be interacted with in tests.
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 var XHRConnection = /** @class */ (function () {
     function XHRConnection(req, browserXHR, baseResponseOptions) {
@@ -1429,7 +1147,7 @@ var XHRConnection = /** @class */ (function () {
             if (!req.headers.has('Accept')) {
                 req.headers.append('Accept', 'application/json, text/plain, */*');
             }
-            req.headers.forEach(function (values, name) { return _xhr.setRequestHeader((name), values.join(',')); });
+            req.headers.forEach(function (values, name) { return _xhr.setRequestHeader(name, values.join(',')); });
             // Select the correct buffer type to store the response
             if (req.responseType != null && _xhr.responseType != null) {
                 switch (req.responseType) {
@@ -1496,7 +1214,7 @@ var XHRConnection = /** @class */ (function () {
  * with different `cookieName` and `headerName` values. See the main HTTP documentation for more
  * details.
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 var CookieXSRFStrategy = /** @class */ (function () {
     function CookieXSRFStrategy(_cookieName, _headerName) {
@@ -1537,7 +1255,7 @@ var CookieXSRFStrategy = /** @class */ (function () {
  *   }
  * }
  * ```
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 var XHRBackend = /** @class */ (function () {
     function XHRBackend(_browserXHR, _baseResponseOptions, _xsrfStrategy) {
@@ -1554,9 +1272,9 @@ var XHRBackend = /** @class */ (function () {
     ];
     /** @nocollapse */
     XHRBackend.ctorParameters = function () { return [
-        { type: BrowserXhr, },
-        { type: ResponseOptions, },
-        { type: XSRFStrategy, },
+        { type: BrowserXhr },
+        { type: ResponseOptions },
+        { type: XSRFStrategy }
     ]; };
     return XHRBackend;
 }());
@@ -1590,7 +1308,7 @@ var XHRBackend = /** @class */ (function () {
  * console.log('options.url:', options.url); // https://google.com
  * ```
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 var RequestOptions = /** @class */ (function () {
     // TODO(Dzmitry): remove search when this.search is removed
@@ -1609,17 +1327,11 @@ var RequestOptions = /** @class */ (function () {
         /**
          * @deprecated from 4.0.0. Use params instead.
          */
-        get: /**
-           * @deprecated from 4.0.0. Use params instead.
-           */
-        function () { return this.params; },
+        get: function () { return this.params; },
         /**
          * @deprecated from 4.0.0. Use params instead.
          */
-        set: /**
-           * @deprecated from 4.0.0. Use params instead.
-           */
-        function (params) { this.params = params; },
+        set: function (params) { this.params = params; },
         enumerable: true,
         configurable: true
     });
@@ -1646,53 +1358,7 @@ var RequestOptions = /** @class */ (function () {
      * console.log('req.url:', req.url); // https://google.com
      * ```
      */
-    /**
-       * Creates a copy of the `RequestOptions` instance, using the optional input as values to override
-       * existing values. This method will not change the values of the instance on which it is being
-       * called.
-       *
-       * Note that `headers` and `search` will override existing values completely if present in
-       * the `options` object. If these values should be merged, it should be done prior to calling
-       * `merge` on the `RequestOptions` instance.
-       *
-       * ```typescript
-       * import {RequestOptions, Request, RequestMethod} from '@angular/http';
-       *
-       * const options = new RequestOptions({
-       *   method: RequestMethod.Post
-       * });
-       * const req = new Request(options.merge({
-       *   url: 'https://google.com'
-       * }));
-       * console.log('req.method:', RequestMethod[req.method]); // Post
-       * console.log('options.url:', options.url); // null
-       * console.log('req.url:', req.url); // https://google.com
-       * ```
-       */
-    RequestOptions.prototype.merge = /**
-       * Creates a copy of the `RequestOptions` instance, using the optional input as values to override
-       * existing values. This method will not change the values of the instance on which it is being
-       * called.
-       *
-       * Note that `headers` and `search` will override existing values completely if present in
-       * the `options` object. If these values should be merged, it should be done prior to calling
-       * `merge` on the `RequestOptions` instance.
-       *
-       * ```typescript
-       * import {RequestOptions, Request, RequestMethod} from '@angular/http';
-       *
-       * const options = new RequestOptions({
-       *   method: RequestMethod.Post
-       * });
-       * const req = new Request(options.merge({
-       *   url: 'https://google.com'
-       * }));
-       * console.log('req.method:', RequestMethod[req.method]); // Post
-       * console.log('options.url:', options.url); // null
-       * console.log('req.url:', req.url); // https://google.com
-       * ```
-       */
-    function (options) {
+    RequestOptions.prototype.merge = function (options) {
         return new RequestOptions({
             method: options && options.method != null ? options.method : this.method,
             headers: options && options.headers != null ? options.headers : new Headers(this.headers),
@@ -1776,7 +1442,7 @@ var RequestOptions = /** @class */ (function () {
  * console.log('req.url:', req.url); // https://google.com
  * ```
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 var BaseRequestOptions = /** @class */ (function (_super) {
     Object(__WEBPACK_IMPORTED_MODULE_1_tslib__["b" /* __extends */])(BaseRequestOptions, _super);
@@ -1836,7 +1502,7 @@ var BaseRequestOptions = /** @class */ (function (_super) {
  * });
  * ```
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 var Request = /** @class */ (function (_super) {
     Object(__WEBPACK_IMPORTED_MODULE_1_tslib__["b" /* __extends */])(Request, _super);
@@ -1844,7 +1510,7 @@ var Request = /** @class */ (function (_super) {
         var _this = _super.call(this) || this;
         // TODO: assert that url is present
         var url = requestOptions.url;
-        _this.url = (requestOptions.url);
+        _this.url = requestOptions.url;
         var paramsArg = requestOptions.params || requestOptions.search;
         if (paramsArg) {
             var params = void 0;
@@ -1860,32 +1526,23 @@ var Request = /** @class */ (function (_super) {
                     prefix = (_this.url[_this.url.length - 1] == '&') ? '' : '&';
                 }
                 // TODO: just delete search-query-looking string in url?
-                // TODO: just delete search-query-looking string in url?
                 _this.url = url + prefix + params;
             }
         }
         _this._body = requestOptions.body;
-        _this.method = normalizeMethodName((requestOptions.method));
-        // TODO(jeffbcross): implement behavior
-        // Defaults to 'omit', consistent with browser
+        _this.method = normalizeMethodName(requestOptions.method);
         // TODO(jeffbcross): implement behavior
         // Defaults to 'omit', consistent with browser
         _this.headers = new Headers(requestOptions.headers);
         _this.contentType = _this.detectContentType();
-        _this.withCredentials = (requestOptions.withCredentials);
-        _this.responseType = (requestOptions.responseType);
+        _this.withCredentials = requestOptions.withCredentials;
+        _this.responseType = requestOptions.responseType;
         return _this;
     }
     /**
      * Returns the content type enum based on header options.
      */
-    /**
-       * Returns the content type enum based on header options.
-       */
-    Request.prototype.detectContentType = /**
-       * Returns the content type enum based on header options.
-       */
-    function () {
+    Request.prototype.detectContentType = function () {
         switch (this.headers.get('content-type')) {
             case 'application/json':
                 return ContentType.JSON;
@@ -1905,13 +1562,7 @@ var Request = /** @class */ (function (_super) {
     /**
      * Returns the content type of request's body based on its type.
      */
-    /**
-       * Returns the content type of request's body based on its type.
-       */
-    Request.prototype.detectContentTypeFromBody = /**
-       * Returns the content type of request's body based on its type.
-       */
-    function () {
+    Request.prototype.detectContentTypeFromBody = function () {
         if (this._body == null) {
             return ContentType.NONE;
         }
@@ -1938,15 +1589,7 @@ var Request = /** @class */ (function (_super) {
      * Returns the request's body according to its type. If body is undefined, return
      * null.
      */
-    /**
-       * Returns the request's body according to its type. If body is undefined, return
-       * null.
-       */
-    Request.prototype.getBody = /**
-       * Returns the request's body according to its type. If body is undefined, return
-       * null.
-       */
-    function () {
+    Request.prototype.getBody = function () {
         switch (this.contentType) {
             case ContentType.JSON:
                 return this.text();
@@ -2071,7 +1714,7 @@ function mergeOptions(defaultOpts, providedOpts, method, url) {
  * http.get('request-from-mock-backend.json').subscribe((res:Response) => doSomething(res));
  * ```
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 var Http = /** @class */ (function () {
     function Http(_backend, _defaultOptions) {
@@ -2084,19 +1727,7 @@ var Http = /** @class */ (function () {
      * object can be provided as the 2nd argument. The options object will be merged with the values
      * of {@link BaseRequestOptions} before performing the request.
      */
-    /**
-       * Performs any type of http request. First argument is required, and can either be a url or
-       * a {@link Request} instance. If the first argument is a url, an optional {@link RequestOptions}
-       * object can be provided as the 2nd argument. The options object will be merged with the values
-       * of {@link BaseRequestOptions} before performing the request.
-       */
-    Http.prototype.request = /**
-       * Performs any type of http request. First argument is required, and can either be a url or
-       * a {@link Request} instance. If the first argument is a url, an optional {@link RequestOptions}
-       * object can be provided as the 2nd argument. The options object will be merged with the values
-       * of {@link BaseRequestOptions} before performing the request.
-       */
-    function (url, options) {
+    Http.prototype.request = function (url, options) {
         var responseObservable;
         if (typeof url === 'string') {
             responseObservable = httpRequest(this._backend, new Request(mergeOptions(this._defaultOptions, options, RequestMethod.Get, url)));
@@ -2112,85 +1743,43 @@ var Http = /** @class */ (function () {
     /**
      * Performs a request with `get` http method.
      */
-    /**
-       * Performs a request with `get` http method.
-       */
-    Http.prototype.get = /**
-       * Performs a request with `get` http method.
-       */
-    function (url, options) {
+    Http.prototype.get = function (url, options) {
         return this.request(new Request(mergeOptions(this._defaultOptions, options, RequestMethod.Get, url)));
     };
     /**
      * Performs a request with `post` http method.
      */
-    /**
-       * Performs a request with `post` http method.
-       */
-    Http.prototype.post = /**
-       * Performs a request with `post` http method.
-       */
-    function (url, body, options) {
+    Http.prototype.post = function (url, body, options) {
         return this.request(new Request(mergeOptions(this._defaultOptions.merge(new RequestOptions({ body: body })), options, RequestMethod.Post, url)));
     };
     /**
      * Performs a request with `put` http method.
      */
-    /**
-       * Performs a request with `put` http method.
-       */
-    Http.prototype.put = /**
-       * Performs a request with `put` http method.
-       */
-    function (url, body, options) {
+    Http.prototype.put = function (url, body, options) {
         return this.request(new Request(mergeOptions(this._defaultOptions.merge(new RequestOptions({ body: body })), options, RequestMethod.Put, url)));
     };
     /**
      * Performs a request with `delete` http method.
      */
-    /**
-       * Performs a request with `delete` http method.
-       */
-    Http.prototype.delete = /**
-       * Performs a request with `delete` http method.
-       */
-    function (url, options) {
+    Http.prototype.delete = function (url, options) {
         return this.request(new Request(mergeOptions(this._defaultOptions, options, RequestMethod.Delete, url)));
     };
     /**
      * Performs a request with `patch` http method.
      */
-    /**
-       * Performs a request with `patch` http method.
-       */
-    Http.prototype.patch = /**
-       * Performs a request with `patch` http method.
-       */
-    function (url, body, options) {
+    Http.prototype.patch = function (url, body, options) {
         return this.request(new Request(mergeOptions(this._defaultOptions.merge(new RequestOptions({ body: body })), options, RequestMethod.Patch, url)));
     };
     /**
      * Performs a request with `head` http method.
      */
-    /**
-       * Performs a request with `head` http method.
-       */
-    Http.prototype.head = /**
-       * Performs a request with `head` http method.
-       */
-    function (url, options) {
+    Http.prototype.head = function (url, options) {
         return this.request(new Request(mergeOptions(this._defaultOptions, options, RequestMethod.Head, url)));
     };
     /**
      * Performs a request with `options` http method.
      */
-    /**
-       * Performs a request with `options` http method.
-       */
-    Http.prototype.options = /**
-       * Performs a request with `options` http method.
-       */
-    function (url, options) {
+    Http.prototype.options = function (url, options) {
         return this.request(new Request(mergeOptions(this._defaultOptions, options, RequestMethod.Options, url)));
     };
     Http.decorators = [
@@ -2198,13 +1787,13 @@ var Http = /** @class */ (function () {
     ];
     /** @nocollapse */
     Http.ctorParameters = function () { return [
-        { type: ConnectionBackend, },
-        { type: RequestOptions, },
+        { type: ConnectionBackend },
+        { type: RequestOptions }
     ]; };
     return Http;
 }());
 /**
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 var Jsonp = /** @class */ (function (_super) {
     Object(__WEBPACK_IMPORTED_MODULE_1_tslib__["b" /* __extends */])(Jsonp, _super);
@@ -2225,35 +1814,7 @@ var Jsonp = /** @class */ (function (_super) {
      * future security issues (e.g. content sniffing).  For more detail, see the
      * [Security Guide](http://g.co/ng/security).
      */
-    /**
-       * Performs any type of http request. First argument is required, and can either be a url or
-       * a {@link Request} instance. If the first argument is a url, an optional {@link RequestOptions}
-       * object can be provided as the 2nd argument. The options object will be merged with the values
-       * of {@link BaseRequestOptions} before performing the request.
-       *
-       * @security Regular XHR is the safest alternative to JSONP for most applications, and is
-       * supported by all current browsers. Because JSONP creates a `<script>` element with
-       * contents retrieved from a remote source, attacker-controlled data introduced by an untrusted
-       * source could expose your application to XSS risks. Data exposed by JSONP may also be
-       * readable by malicious third-party websites. In addition, JSONP introduces potential risk for
-       * future security issues (e.g. content sniffing).  For more detail, see the
-       * [Security Guide](http://g.co/ng/security).
-       */
-    Jsonp.prototype.request = /**
-       * Performs any type of http request. First argument is required, and can either be a url or
-       * a {@link Request} instance. If the first argument is a url, an optional {@link RequestOptions}
-       * object can be provided as the 2nd argument. The options object will be merged with the values
-       * of {@link BaseRequestOptions} before performing the request.
-       *
-       * @security Regular XHR is the safest alternative to JSONP for most applications, and is
-       * supported by all current browsers. Because JSONP creates a `<script>` element with
-       * contents retrieved from a remote source, attacker-controlled data introduced by an untrusted
-       * source could expose your application to XSS risks. Data exposed by JSONP may also be
-       * readable by malicious third-party websites. In addition, JSONP introduces potential risk for
-       * future security issues (e.g. content sniffing).  For more detail, see the
-       * [Security Guide](http://g.co/ng/security).
-       */
-    function (url, options) {
+    Jsonp.prototype.request = function (url, options) {
         var responseObservable;
         if (typeof url === 'string') {
             url =
@@ -2275,8 +1836,8 @@ var Jsonp = /** @class */ (function (_super) {
     ];
     /** @nocollapse */
     Jsonp.ctorParameters = function () { return [
-        { type: ConnectionBackend, },
-        { type: RequestOptions, },
+        { type: ConnectionBackend },
+        { type: RequestOptions }
     ]; };
     return Jsonp;
 }(Http));
@@ -2300,7 +1861,7 @@ function jsonpFactory(jsonpBackend, requestOptions) {
 /**
  * The module that includes http's providers
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 var HttpModule = /** @class */ (function () {
     function HttpModule() {
@@ -2319,14 +1880,12 @@ var HttpModule = /** @class */ (function () {
                     ],
                 },] }
     ];
-    /** @nocollapse */
-    HttpModule.ctorParameters = function () { return []; };
     return HttpModule;
 }());
 /**
  * The module that includes jsonp's providers
  *
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
 var JsonpModule = /** @class */ (function () {
     function JsonpModule() {
@@ -2344,8 +1903,6 @@ var JsonpModule = /** @class */ (function () {
                     ],
                 },] }
     ];
-    /** @nocollapse */
-    JsonpModule.ctorParameters = function () { return []; };
     return JsonpModule;
 }());
 
@@ -2357,9 +1914,9 @@ var JsonpModule = /** @class */ (function () {
  * found in the LICENSE file at https://angular.io/license
  */
 /**
- * @deprecated use @angular/common/http instead
+ * @deprecated see https://angular.io/guide/http
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["Version"]('6.0.3');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["Version"]('6.0.9');
 
 /**
  * @license
@@ -2376,7 +1933,6 @@ var VERSION = new __WEBPACK_IMPORTED_MODULE_0__angular_core__["Version"]('6.0.3'
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-
 // This file only reexports content of the `src` folder. Keep it that way.
 
 /**
