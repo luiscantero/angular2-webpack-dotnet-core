@@ -1,11 +1,11 @@
-﻿var webpackMerge = require('webpack-merge');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var commonConfig = require('./webpack.common.js');
-var helpers = require('./helpers');
-var webpack = require('webpack');
+﻿const webpackMerge = require('webpack-merge');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const commonConfig = require('./webpack.common.js');
+const helpers = require('./helpers');
+const webpack = require('webpack');
 
 module.exports = webpackMerge(commonConfig, {
-    //mode: 'development',
+    mode: 'development',
 
     output: {
         path: helpers.root('./wwwroot'),
@@ -15,14 +15,17 @@ module.exports = webpackMerge(commonConfig, {
     },
 
     plugins: [
-      new ExtractTextPlugin('[name].css'),
+        new MiniCssExtractPlugin({
+            filename: '[name].css',
+            chunkFilename: '[id].css',
+        }),
 
-      new webpack.SourceMapDevToolPlugin({
-          test: /\.js$/,
-          moduleFilenameTemplate: '[absolute-resource-path]',
-          fallbackModuleFilenameTemplate: '[resource-path]?[hash]',
-          filename: "[file].map"
-      }),
+        new webpack.SourceMapDevToolPlugin({
+            test: /\.js$/,
+            moduleFilenameTemplate: '[absolute-resource-path]',
+            fallbackModuleFilenameTemplate: '[resource-path]?[hash]',
+            filename: "[file].map"
+        }),
     ],
 
     devServer: {

@@ -1,8 +1,8 @@
-﻿var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require('extract-text-webpack-plugin');
-var OpenBrowserPlugin = require('open-browser-webpack-plugin');
-var helpers = require('./helpers');
+﻿const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OpenBrowserPlugin = require('open-browser-webpack-plugin');
+const helpers = require('./helpers');
 
 module.exports = {
     entry: {
@@ -40,7 +40,12 @@ module.exports = {
             {
                 test: /\.css$/,
                 exclude: helpers.root('app'),
-                use: ExtractTextPlugin.extract({ fallback: 'style-loader', use: 'css-loader?source-map' })
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                    },
+                    "css-loader"
+                ],
             },
             {
                 test: /\.css$/,
@@ -54,10 +59,6 @@ module.exports = {
     },
 
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin({
-            name: ['app', 'vendor', 'polyfills']
-        }),
-
         new webpack.ContextReplacementPlugin(
             /angular(\\|\/)core/,
             __dirname
@@ -68,23 +69,17 @@ module.exports = {
         }),
 
         new OpenBrowserPlugin({ url: 'http://localhost:3000' }),
-
-        //new webpack.ProvidePlugin({
-        //    jQuery: 'jquery',
-        //    $: 'jquery',
-        //    jquery: 'jquery'
-        //}),
     ],
 
-    //optimization: {
-    //    splitChunks: {
-    //        cacheGroups: {
-    //            vendors: {
-    //                name: "vendors",
-    //                test: "vendors",
-    //                enforce: true
-    //            },
-    //        }
-    //    }
-    //}
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                vendors: {
+                    name: "vendors",
+                    test: "vendors",
+                    enforce: true,
+                },
+            }
+        }
+    }
 };
