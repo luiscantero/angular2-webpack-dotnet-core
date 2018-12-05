@@ -9,7 +9,7 @@ import { IAppState, reducer, INITIAL_STATE } from './store';
     styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-    title = "Angular 6 Test";
+    title = "Angular 7 Test";
 
     constructor(private ngRedux: NgRedux<IAppState>) {
         ngRedux.configureStore(reducer, INITIAL_STATE); // Call once for lifetime of app.

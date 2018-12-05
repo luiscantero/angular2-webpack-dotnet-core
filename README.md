@@ -1,6 +1,6 @@
-# angular6-webpack-dotnet-core
+# angular7-webpack-dotnet-core
 ## Description
-* Visual Studio 2017 ASP.NET Core project to demo Angular 6 using webpack.
+* Visual Studio 2017 ASP.NET Core project to demo Angular 7 using webpack.
 
 ## Notes
 * Supports running in Visual Studio and debugging using breakpoints, etc.
@@ -9,7 +9,7 @@
 * Supports running from the command line using `npm start`.
 
 ## Reference
-* [Angular 6](https://angular.io/)
+* [Angular 7](https://angular.io/)
 * [webpack](https://github.com/webpack/webpack)
 * [Introduction to webpack](https://angular.io/docs/ts/latest/guide/webpack.html)
 * [List of webpack plugins](https://webpack.github.io/docs/list-of-plugins.html)
