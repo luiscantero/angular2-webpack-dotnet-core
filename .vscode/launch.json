@@ -18,7 +18,7 @@
             "request": "launch",
             "name": "Launch Chrome",
             "url": "http://localhost:5000",
-            "webRoot": "${workspaceFolder}/wwwroot"
+            "webRoot": "${workspaceFolder}/src/TestAngular2/wwwroot"
         },
         {
             "name": ".NET Core Launch (web)",
@@ -49,7 +49,7 @@
                 "ASPNETCORE_ENVIRONMENT": "Development"
             },
             "sourceFileMap": {
-                "/Views": "${workspaceFolder}/Views"
+                "/Views": "${workspaceFolder}/src/TestAngular2/app"
             }
         },
         {

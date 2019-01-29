@@ -7,6 +7,8 @@ const webpack = require('webpack');
 module.exports = webpackMerge(commonConfig, {
     mode: 'development',
 
+    devtool: false, // USe SourceMapDevToolPlugin.
+
     output: {
         path: helpers.root('./wwwroot'),
         publicPath: '',

@@ -8,7 +8,7 @@ const express = require('express'),
     faker = require('faker'); // https://www.npmjs.com/package/faker
 
 // Read authors from file.
-// const webroot = 'wwwroot/';
+// const webroot = 'wwwroot';
 // const uri = 'mock-authors.json';
 
 // Return fake authors.

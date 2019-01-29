@@ -1,7 +1,7 @@
 {
-  "name": "angular6_webpack",
+  "name": "angular7_webpack",
   "version": "1.0.0",
-  "description": "Angular 6 demo using webpack",
+  "description": "Angular 7 demo using webpack",
   "main": "main.js",
   "scripts": {
     "build:dev": "rimraf wwwroot/* && webpack --config config/webpack.dev.js --progress --profile && copyfiles mock-authors.json favicon.ico wwwroot",
@@ -57,7 +57,7 @@
     "to-string-loader": "^1.1.5",
     "tslint": "^5.12.1",
     "typescript": "^3.2.2",
-    "webpack": "~4.28.4",
+    "webpack": "~4.29.0",
     "webpack-cli": "~3.2.1",
     "webpack-dev-server": "~3.1.14",
     "webpack-material-design-icons": "^0.1.0",
