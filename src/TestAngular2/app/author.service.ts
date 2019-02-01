@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Author } from './author.model';
-import { AUTHORS } from './mock-authors';
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -9,7 +8,7 @@ const httpOptions = {
 
 @Injectable({ providedIn: 'root' })
 export class AuthorService {
-    private authorsUrl = '/mock-authors.json'; // URL to web api.
+    private authorsUrl = 'http://localhost:8081/api/authors'; // URL to web api.
 
     constructor(private http: HttpClient) { }
 

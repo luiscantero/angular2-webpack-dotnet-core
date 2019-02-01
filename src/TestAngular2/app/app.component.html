@@ -3,5 +3,7 @@
     <a routerLink="/intro" routerLinkActive="active">Intro</a>
     <a routerLink="/about" routerLinkActive="active">About</a>
     <a [routerLink]="['/details', 123]" routerLinkActive="active">Details</a>
+    <a (click)="login()" *ngIf="!authenticated">Login</a>
+    <a (click)="logout()" *ngIf="authenticated">Logout</a>
 </nav>
 <router-outlet></router-outlet>

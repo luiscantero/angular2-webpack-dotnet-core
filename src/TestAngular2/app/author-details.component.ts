@@ -7,7 +7,6 @@ import { AuthorService } from './author.service';
     selector: 'author-details',
     templateUrl: './author-details.component.html',
     styleUrls: ['./author-details.component.css'],
-    providers: [AuthorService],
 })
 export class AuthorDetailsComponent implements OnInit, OnDestroy {
     author: Author;
@@ -18,7 +17,7 @@ export class AuthorDetailsComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit(): void {
-        this.sub = this.route.params.subscribe(params => {
+        this.sub = this.route.params.subscribe((params: any) => {
             if (typeof (params['name']) !== 'undefined') {
                 let name = params['name'];
                 this.authorService.getAuthor(name)

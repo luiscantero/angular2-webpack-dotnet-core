@@ -18,6 +18,10 @@ import { NestmeComponent } from './nestme.component';
 import { AlertOnClickDirective } from './alert.directive';
 import { AuthorSearchComponent } from './author-search.component';
 
+import { AdalService, AdalGuard, AdalInterceptor } from 'adal-angular4';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthGuard } from './auth.guard';
+
 @NgModule({
     imports: [
         BrowserModule,
@@ -39,7 +43,12 @@ import { AuthorSearchComponent } from './author-search.component';
         AlertOnClickDirective,
         AuthorSearchComponent,
     ],
-    providers: [],
+    providers: [
+        AdalService,
+        AdalGuard,
+        { provide: HTTP_INTERCEPTORS, useClass: AdalInterceptor, multi: true },
+        AuthGuard,
+    ],
     bootstrap: [ AppComponent ]
 })
 export class AppModule { }

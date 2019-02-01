@@ -5,6 +5,9 @@ import { IntroComponent } from './intro.component';
 import { AboutComponent } from './about.component';
 import { AuthorDetailsComponent } from './author-details.component';
 
+import { AdalGuard } from 'adal-angular4';
+import { AuthGuard } from './auth.guard';
+
 const routes: Routes = [
     {
         path: '',
@@ -21,7 +24,8 @@ const routes: Routes = [
     },
     {
         path: 'details/:name',
-        component: AuthorDetailsComponent
+        component: AuthorDetailsComponent,
+        canActivate: [AuthGuard], //AdalGuard
     },
 ];
 

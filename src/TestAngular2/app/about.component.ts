@@ -35,6 +35,21 @@ export class AboutComponent implements OnInit, OnDestroy {
             .then((authors: Author[]) => this.authors = authors);
 
         this.repo = this.repoSvc.get("repo");
+
+        //(async () => {
+        //    alert(JSON.stringify(this.adalService.userInfo));
+
+        //    var token = await this.adalService.acquireToken("00000003-0000-0000-c000-000000000000").toPromise();
+
+        //    var response = await fetch("https://graph.microsoft.com/v1.0/me", {
+        //        headers: {
+        //            Authorization: "Bearer " + token,
+        //        }
+        //    });
+
+        //    var profile = await response.text();
+        //    alert("Graph: " + JSON.stringify(profile));
+        //})();
     }
 
     ngOnDestroy(): void {
