@@ -65,10 +65,11 @@ module.exports = {
         ),
 
         new HtmlWebpackPlugin({
-            template: './index.html'
+            template: './index.html',
+            favicon: './favicon.ico',
         }),
 
-        new OpenBrowserPlugin({ url: 'http://localhost:3000' }),
+        new OpenBrowserPlugin({ url: 'http://localhost:5000' }),
     ],
 
     optimization: {

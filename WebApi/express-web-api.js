@@ -5,7 +5,12 @@
 const express = require('express'),
     fs = require('fs'),
     app = express(),
+    cors = require('cors'),
     faker = require('faker'); // https://www.npmjs.com/package/faker
+
+const port = process.env.PORT || 8081;
+
+app.use(cors());
 
 // Read authors from file.
 // const webroot = 'wwwroot';
@@ -50,7 +55,7 @@ app.get('/api/authors/:name', async (req, res) => {
     res.end(JSON.stringify(results));
 });
 
-var server = app.listen(8081, () => {
+var server = app.listen(port, () => {
     console.log(`Server running at http://${server.address().address}:${server.address().port}/`);
 }).on('error', (err) => {
     console.log(err);

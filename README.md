@@ -7,6 +7,7 @@
 * Before running for the first time, run the command line `npm run build:dev` to build a development version.
 * Run `npm run build:prod` to build a production version.
 * Supports running from the command line using `npm start`.
+* Start test Web API: `WebApi\node express-web-api.js`.
 
 ## Reference
 * [Angular 7](https://angular.io/)
