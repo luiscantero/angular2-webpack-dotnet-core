@@ -47,6 +47,11 @@ app.get('/api/authors/:name', async (req, res) => {
     res.send(JSON.stringify(results));
 });
 
+// GET: api/headers/
+app.get('/api/headers', async (req, res) => {
+    res.send(JSON.stringify(req.headers));
+});
+
 var server = app.listen(port, () => {
     console.log(`Server running at http://${server.address().address}:${server.address().port}/`);
 }).on('error', (err) => {

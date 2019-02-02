@@ -7,14 +7,14 @@ import { Author } from './author.model';
 
 @Injectable()
 export class AuthorSearchService {
+    private authorsUrl = 'http://localhost:8081/api/authors'; // URL to web api.
 
     constructor(private http: HttpClient) { }
 
     search(term: string): Observable<Author[]> {
         console.log(term);
         return this.http
-            //.get(`/mock-authors.json?name=${term}`)
-            .get(`http://localhost:8081/api/authors/${term}`)
+            .get(`${this.authorsUrl}/${term}`)
             .pipe(
             map((response: any) => response.data as Author[]));
     }
