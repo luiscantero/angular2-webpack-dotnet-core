@@ -26,11 +26,7 @@ loadAuthors();
 app.get('/api/authors', async (req, res) => {
     var authors = await getAllAuthors();
 
-    res.writeHead(200, {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json'
-    });
-    res.end(JSON.stringify(authors));
+    res.send(JSON.stringify(authors));
 });
 
 // GET: api/authors/name
@@ -48,11 +44,7 @@ app.get('/api/authors/:name', async (req, res) => {
         }
     }
 
-    res.writeHead(200, {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json'
-    });
-    res.end(JSON.stringify(results));
+    res.send(JSON.stringify(results));
 });
 
 var server = app.listen(port, () => {
