@@ -4,10 +4,11 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
 import { Author } from './author.model';
+import { environment } from '../environments/environment';
 
 @Injectable()
 export class AuthorSearchService {
-    private authorsUrl = 'http://localhost:8081/api/authors'; // URL to web api.
+    private authorsUrl = environment.authorsUrl; // URL to web api.
 
     constructor(private http: HttpClient) { }
 

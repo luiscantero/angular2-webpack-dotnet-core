@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Author } from './author.model';
+import { environment } from '../environments/environment';
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -8,7 +9,7 @@ const httpOptions = {
 
 @Injectable({ providedIn: 'root' })
 export class AuthorService {
-    private authorsUrl = 'http://localhost:8081/api/authors'; // URL to web api.
+    private authorsUrl = environment.authorsUrl; // URL to web api.
 
     constructor(private http: HttpClient) { }
 
@@ -67,8 +68,12 @@ export class AuthorService {
             .then((authors: Author[]) => authors.find(author => author.name === name));
     }
 
-    //getAuthors(): Promise<Author[]> {
-    //    return Promise.resolve(AUTHORS);
+    //getMockAuthors(): Promise<Author[]> {
+    //    return Promise.resolve([
+    //        { name: 'Bill', age: 20 },
+    //        { name: 'Steve', age: 21 },
+    //        { name: 'R.R.', age: 65 },
+    //    ]);
     //}
 
     getAuthorsSlowly(): Promise<Author[]> {

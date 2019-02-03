@@ -41,7 +41,12 @@ module.exports = webpackMerge(commonConfig, {
             'process.env': {
                 'ENV': JSON.stringify(ENV)
             }
-        })
+        }),
+        // https://webpack.js.org/plugins/normal-module-replacement-plugin/
+        new webpack.NormalModuleReplacementPlugin(
+            /environments\/environment/,
+            require.resolve('../environments/environment.prod.ts')
+        ),
     ],
 
     optimization: {
