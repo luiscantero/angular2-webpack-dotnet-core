@@ -18,13 +18,15 @@ export class AppComponent {
         private adalService: AdalService) {
         ngRedux.configureStore(reducer, INITIAL_STATE); // Call once for lifetime of app.
 
-        if (environment.adalConfig.tenant.length > 0) {
+        if (environment.adalConfig.tenant.length > 0) { // ADAL enabled.
             this.adalService.init(environment.adalConfig);
         }
     }
 
     login() {
-        this.adalService.login();
+        if (environment.adalConfig.tenant.length > 0) { // ADAL enabled.
+            this.adalService.login();
+        }
     }
 
     logout() {
@@ -39,7 +41,9 @@ export class AppComponent {
     }
 
     ngOnInit(): void {
-        this.adalService.handleWindowCallback();
+        if (environment.adalConfig.tenant.length > 0) { // ADAL enabled.
+            this.adalService.handleWindowCallback();
+        }
 
         console.log(this.adalService.userInfo);
     }

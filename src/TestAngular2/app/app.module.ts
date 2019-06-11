@@ -46,7 +46,7 @@ import { AuthGuard } from './auth.guard';
     providers: [
         AdalService,
         AdalGuard,
-        { provide: HTTP_INTERCEPTORS, useClass: AdalInterceptor, multi: true },
+        //{ provide: HTTP_INTERCEPTORS, useClass: AdalInterceptor, multi: true }, // Uncomment to enable HTTP interception for ADAL guard.
         AuthGuard,
     ],
     bootstrap: [ AppComponent ]
