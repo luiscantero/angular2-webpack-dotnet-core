@@ -10,6 +10,8 @@ import { NgRedux, select } from '@angular-redux/store';
 import { IAppState, ADD_ITEM, REMOVE_ITEM, REMOVE_ALL_ITEMS } from './store';
 import { Observable } from 'rxjs';
 
+import { AdalService } from 'adal-angular4';
+
 @Component({
     selector: 'my-about',
     templateUrl: './about.component.html',
@@ -28,7 +30,8 @@ export class AboutComponent implements OnInit, OnDestroy {
     constructor(private router: Router,
         private authorService: AuthorService,
         private repoSvc: RepositoryService,
-        private ngRedux: NgRedux<IAppState>) { }
+        private ngRedux: NgRedux<IAppState>,
+        private adalService: AdalService) { }
 
     ngOnInit(): void {
         this.authorService.getAuthors()

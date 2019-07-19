@@ -1,3 +1,4 @@
+// AAD Auth: Enter tenant, clientId, endpoint URI and GUID to enable authentication.
 export const environment = {
     production: true,
     authorsUrl: "http://localhost:8081/api/authors",
