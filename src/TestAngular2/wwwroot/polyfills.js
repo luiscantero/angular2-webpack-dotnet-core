@@ -5328,7 +5328,7 @@ module.exports = g;
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
- * @license Angular v0.10.0
+ * @license Angular v0.10.2
  * (c) 2010-2019 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -5412,6 +5412,15 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
         }
         return longTrace.join(NEWLINE);
     }
+    // if Error.stackTraceLimit is 0, means stack trace
+    // is disabled, so we don't need to generate long stack trace
+    // this will improve performance in some test(some test will
+    // set stackTraceLimit to 0, https://github.com/angular/zone.js/issues/698
+    function stackTracesEnabled() {
+        // Cast through any since this property only exists on Error in the nodejs
+        // typings.
+        return Error.stackTraceLimit > 0;
+    }
     Zone['longStackTraceZoneSpec'] = {
         name: 'long-stack-trace',
         longStackTraceLimit: 10,
@@ -5428,11 +5437,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
             return renderLongStackTrace(trace, error.stack);
         },
         onScheduleTask: function (parentZoneDelegate, currentZone, targetZone, task) {
-            if (Error.stackTraceLimit > 0) {
-                // if Error.stackTraceLimit is 0, means stack trace
-                // is disabled, so we don't need to generate long stack trace
-                // this will improve performance in some test(some test will
-                // set stackTraceLimit to 0, https://github.com/angular/zone.js/issues/698
+            if (stackTracesEnabled()) {
                 var currentTask = Zone.currentTask;
                 var trace = currentTask && currentTask.data && currentTask.data[creationTrace] || [];
                 trace = [new LongStackTrace()].concat(trace);
@@ -5454,11 +5459,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
             return parentZoneDelegate.scheduleTask(targetZone, task);
         },
         onHandleError: function (parentZoneDelegate, currentZone, targetZone, error) {
-            if (Error.stackTraceLimit > 0) {
-                // if Error.stackTraceLimit is 0, means stack trace
-                // is disabled, so we don't need to generate long stack trace
-                // this will improve performance in some test(some test will
-                // set stackTraceLimit to 0, https://github.com/angular/zone.js/issues/698
+            if (stackTracesEnabled()) {
                 var parentTask = Zone.currentTask || error.task;
                 if (error instanceof Error && parentTask) {
                     var longStack = renderLongStackTrace(parentTask.data && parentTask.data[creationTrace], error.stack);
@@ -5479,7 +5480,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
         }
     }
     function computeIgnoreFrames() {
-        if (Error.stackTraceLimit <= 0) {
+        if (!stackTracesEnabled()) {
             return;
         }
         var frames = [];
@@ -5509,7 +5510,6 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
     }
     computeIgnoreFrames();
 }));
-//# sourceMappingURL=long_stack_trace_zone_rollup.umd.js.map
 
 
 /***/ }),
@@ -5521,8 +5521,18 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(global) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
- * @license Angular v0.10.0
+/* WEBPACK VAR INJECTION */(function(global) {var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;var __values = (this && this.__values) || function (o) {
+    var m = typeof Symbol === "function" && o[Symbol.iterator], i = 0;
+    if (m) return m.call(o);
+    return {
+        next: function () {
+            if (o && i >= o.length) o = void 0;
+            return { value: o && o[i++], done: !o };
+        }
+    };
+};
+/**
+ * @license Angular v0.10.2
  * (c) 2010-2019 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -5610,6 +5620,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
                 enumerable: true,
                 configurable: true
             });
+            // tslint:disable-next-line:require-internal-with-underscore
             Zone.__load_patch = function (name, fn) {
                 if (patches.hasOwnProperty(name)) {
                     if (checkDuplicate) {
@@ -5812,6 +5823,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
             };
             return Zone;
         }());
+        // tslint:disable-next-line:require-internal-with-underscore
         Zone.__symbol__ = __symbol__;
         var DELEGATE_ZS = {
             name: '',
@@ -5969,6 +5981,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
                     this.handleError(targetZone, err);
                 }
             };
+            // tslint:disable-next-line:require-internal-with-underscore
             ZoneDelegate.prototype._updateTaskCount = function (type, count) {
                 var counts = this._taskCounts;
                 var prev = counts[type];
@@ -5990,9 +6003,12 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
         }());
         var ZoneTask = /** @class */ (function () {
             function ZoneTask(type, source, callback, options, scheduleFn, cancelFn) {
+                // tslint:disable-next-line:require-internal-with-underscore
                 this._zone = null;
                 this.runCount = 0;
+                // tslint:disable-next-line:require-internal-with-underscore
                 this._zoneDelegates = null;
+                // tslint:disable-next-line:require-internal-with-underscore
                 this._state = 'notScheduled';
                 this.type = type;
                 this.source = source;
@@ -6041,6 +6057,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
                 configurable: true
             });
             ZoneTask.prototype.cancelScheduleRequest = function () { this._transitionTo(notScheduled, scheduling); };
+            // tslint:disable-next-line:require-internal-with-underscore
             ZoneTask.prototype._transitionTo = function (toState, fromState1, fromState2) {
                 if (this._state === fromState1 || this._state === fromState2) {
                     this._state = toState;
@@ -6341,26 +6358,20 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
                     }
                     if (queue.length == 0 && state == REJECTED) {
                         promise[symbolState] = REJECTED_NO_CATCH;
-                        var uncaughtPromiseError = void 0;
-                        if (value instanceof Error || (value && value.message)) {
-                            uncaughtPromiseError = value;
+                        try {
+                            // try to print more readable error log
+                            throw new Error('Uncaught (in promise): ' + readableObjectToString(value) +
+                                (value && value.stack ? '\n' + value.stack : ''));
                         }
-                        else {
-                            try {
-                                // try to print more readable error log
-                                throw new Error('Uncaught (in promise): ' + readableObjectToString(value) +
-                                    (value && value.stack ? '\n' + value.stack : ''));
-                            }
-                            catch (err) {
-                                uncaughtPromiseError = err;
-                            }
+                        catch (err) {
+                            var error = err;
+                            error.rejection = value;
+                            error.promise = promise;
+                            error.zone = Zone.current;
+                            error.task = Zone.currentTask;
+                            _uncaughtPromiseErrors.push(error);
+                            api.scheduleMicroTask(); // to make sure that it is running
                         }
-                        uncaughtPromiseError.rejection = value;
-                        uncaughtPromiseError.promise = promise;
-                        uncaughtPromiseError.zone = Zone.current;
-                        uncaughtPromiseError.task = Zone.currentTask;
-                        _uncaughtPromiseErrors.push(uncaughtPromiseError);
-                        api.scheduleMicroTask(); // to make sure that it is running
                     }
                 }
             }
@@ -6442,6 +6453,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
                 return resolvePromise(new this(null), REJECTED, error);
             };
             ZoneAwarePromise.race = function (values) {
+                var e_1, _a;
                 var resolve;
                 var reject;
                 var promise = new this(function (res, rej) {
@@ -6450,16 +6462,34 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
                 });
                 function onResolve(value) { resolve(value); }
                 function onReject(error) { reject(error); }
-                for (var _i = 0, values_1 = values; _i < values_1.length; _i++) {
-                    var value = values_1[_i];
-                    if (!isThenable(value)) {
-                        value = this.resolve(value);
+                try {
+                    for (var values_1 = __values(values), values_1_1 = values_1.next(); !values_1_1.done; values_1_1 = values_1.next()) {
+                        var value = values_1_1.value;
+                        if (!isThenable(value)) {
+                            value = this.resolve(value);
+                        }
+                        value.then(onResolve, onReject);
                     }
-                    value.then(onResolve, onReject);
+                }
+                catch (e_1_1) { e_1 = { error: e_1_1 }; }
+                finally {
+                    try {
+                        if (values_1_1 && !values_1_1.done && (_a = values_1.return)) _a.call(values_1);
+                    }
+                    finally { if (e_1) throw e_1.error; }
                 }
                 return promise;
             };
-            ZoneAwarePromise.all = function (values) {
+            ZoneAwarePromise.all = function (values) { return ZoneAwarePromise.allWithCallback(values); };
+            ZoneAwarePromise.allSettled = function (values) {
+                var P = this && this.prototype instanceof ZoneAwarePromise ? this : ZoneAwarePromise;
+                return P.allWithCallback(values, {
+                    thenCallback: function (value) { return ({ status: 'fulfilled', value: value }); },
+                    errorCallback: function (err) { return ({ status: 'rejected', reason: err }); }
+                });
+            };
+            ZoneAwarePromise.allWithCallback = function (values, callback) {
+                var e_2, _a;
                 var resolve;
                 var reject;
                 var promise = new this(function (res, rej) {
@@ -6475,20 +6505,45 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
                         value = this_1.resolve(value);
                     }
                     var curValueIndex = valueIndex;
-                    value.then(function (value) {
-                        resolvedValues[curValueIndex] = value;
-                        unresolvedCount--;
-                        if (unresolvedCount === 0) {
-                            resolve(resolvedValues);
-                        }
-                    }, reject);
+                    try {
+                        value.then(function (value) {
+                            resolvedValues[curValueIndex] = callback ? callback.thenCallback(value) : value;
+                            unresolvedCount--;
+                            if (unresolvedCount === 0) {
+                                resolve(resolvedValues);
+                            }
+                        }, function (err) {
+                            if (!callback) {
+                                reject(err);
+                            }
+                            else {
+                                resolvedValues[curValueIndex] = callback.errorCallback(err);
+                                unresolvedCount--;
+                                if (unresolvedCount === 0) {
+                                    resolve(resolvedValues);
+                                }
+                            }
+                        });
+                    }
+                    catch (thenErr) {
+                        reject(thenErr);
+                    }
                     unresolvedCount++;
                     valueIndex++;
                 };
                 var this_1 = this;
-                for (var _i = 0, values_2 = values; _i < values_2.length; _i++) {
-                    var value = values_2[_i];
-                    _loop_2(value);
+                try {
+                    for (var values_2 = __values(values), values_2_1 = values_2.next(); !values_2_1.done; values_2_1 = values_2.next()) {
+                        var value = values_2_1.value;
+                        _loop_2(value);
+                    }
+                }
+                catch (e_2_1) { e_2 = { error: e_2_1 }; }
+                finally {
+                    try {
+                        if (values_2_1 && !values_2_1.done && (_a = values_2.return)) _a.call(values_2);
+                    }
+                    finally { if (e_2) throw e_2.error; }
                 }
                 // Make the unresolvedCount zero-based again.
                 unresolvedCount -= 2;
@@ -7717,111 +7772,6 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
      * Use of this source code is governed by an MIT-style license that can be
      * found in the LICENSE file at https://angular.io/license
      */
-    /*
-     * This is necessary for Chrome and Chrome mobile, to enable
-     * things like redefining `createdCallback` on an element.
-     */
-    var zoneSymbol$1 = Zone.__symbol__;
-    var _defineProperty = Object[zoneSymbol$1('defineProperty')] = Object.defineProperty;
-    var _getOwnPropertyDescriptor = Object[zoneSymbol$1('getOwnPropertyDescriptor')] =
-        Object.getOwnPropertyDescriptor;
-    var _create = Object.create;
-    var unconfigurablesKey = zoneSymbol$1('unconfigurables');
-    function propertyPatch() {
-        Object.defineProperty = function (obj, prop, desc) {
-            if (isUnconfigurable(obj, prop)) {
-                throw new TypeError('Cannot assign to read only property \'' + prop + '\' of ' + obj);
-            }
-            var originalConfigurableFlag = desc.configurable;
-            if (prop !== 'prototype') {
-                desc = rewriteDescriptor(obj, prop, desc);
-            }
-            return _tryDefineProperty(obj, prop, desc, originalConfigurableFlag);
-        };
-        Object.defineProperties = function (obj, props) {
-            Object.keys(props).forEach(function (prop) { Object.defineProperty(obj, prop, props[prop]); });
-            return obj;
-        };
-        Object.create = function (obj, proto) {
-            if (typeof proto === 'object' && !Object.isFrozen(proto)) {
-                Object.keys(proto).forEach(function (prop) {
-                    proto[prop] = rewriteDescriptor(obj, prop, proto[prop]);
-                });
-            }
-            return _create(obj, proto);
-        };
-        Object.getOwnPropertyDescriptor = function (obj, prop) {
-            var desc = _getOwnPropertyDescriptor(obj, prop);
-            if (desc && isUnconfigurable(obj, prop)) {
-                desc.configurable = false;
-            }
-            return desc;
-        };
-    }
-    function _redefineProperty(obj, prop, desc) {
-        var originalConfigurableFlag = desc.configurable;
-        desc = rewriteDescriptor(obj, prop, desc);
-        return _tryDefineProperty(obj, prop, desc, originalConfigurableFlag);
-    }
-    function isUnconfigurable(obj, prop) {
-        return obj && obj[unconfigurablesKey] && obj[unconfigurablesKey][prop];
-    }
-    function rewriteDescriptor(obj, prop, desc) {
-        // issue-927, if the desc is frozen, don't try to change the desc
-        if (!Object.isFrozen(desc)) {
-            desc.configurable = true;
-        }
-        if (!desc.configurable) {
-            // issue-927, if the obj is frozen, don't try to set the desc to obj
-            if (!obj[unconfigurablesKey] && !Object.isFrozen(obj)) {
-                _defineProperty(obj, unconfigurablesKey, { writable: true, value: {} });
-            }
-            if (obj[unconfigurablesKey]) {
-                obj[unconfigurablesKey][prop] = true;
-            }
-        }
-        return desc;
-    }
-    function _tryDefineProperty(obj, prop, desc, originalConfigurableFlag) {
-        try {
-            return _defineProperty(obj, prop, desc);
-        }
-        catch (error) {
-            if (desc.configurable) {
-                // In case of errors, when the configurable flag was likely set by rewriteDescriptor(), let's
-                // retry with the original flag value
-                if (typeof originalConfigurableFlag == 'undefined') {
-                    delete desc.configurable;
-                }
-                else {
-                    desc.configurable = originalConfigurableFlag;
-                }
-                try {
-                    return _defineProperty(obj, prop, desc);
-                }
-                catch (error) {
-                    var descJson = null;
-                    try {
-                        descJson = JSON.stringify(desc);
-                    }
-                    catch (error) {
-                        descJson = desc.toString();
-                    }
-                    console.log("Attempting to configure '" + prop + "' with descriptor '" + descJson + "' on object '" + obj + "' and got error, giving up: " + error);
-                }
-            }
-            else {
-                throw error;
-            }
-        }
-    }
-    /**
-     * @license
-     * Copyright Google Inc. All Rights Reserved.
-     *
-     * Use of this source code is governed by an MIT-style license that can be
-     * found in the LICENSE file at https://angular.io/license
-     */
     var globalEventHandlersEventNames = [
         'abort',
         'animationcancel',
@@ -8151,7 +8101,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
         api.wrapWithCurrentZone = wrapWithCurrentZone;
         api.filterProperties = filterProperties;
         api.attachOriginToPatched = attachOriginToPatched;
-        api._redefineProperty = _redefineProperty;
+        api._redefineProperty = Object.defineProperty;
         api.patchCallbacks = patchCallbacks;
         api.getGlobalObjects = function () { return ({ globalSources: globalSources, zoneSymbolEventNames: zoneSymbolEventNames$1, eventNames: eventNames, isBrowser: isBrowser, isMix: isMix, isNode: isNode, TRUE_STR: TRUE_STR,
             FALSE_STR: FALSE_STR, ZONE_SYMBOL_PREFIX: ZONE_SYMBOL_PREFIX, ADD_EVENT_LISTENER_STR: ADD_EVENT_LISTENER_STR, REMOVE_EVENT_LISTENER_STR: REMOVE_EVENT_LISTENER_STR }); };
@@ -8163,6 +8113,116 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
      * Use of this source code is governed by an MIT-style license that can be
      * found in the LICENSE file at https://angular.io/license
      */
+    /**
+     * @license
+     * Copyright Google Inc. All Rights Reserved.
+     *
+     * Use of this source code is governed by an MIT-style license that can be
+     * found in the LICENSE file at https://angular.io/license
+     */
+    /*
+     * This is necessary for Chrome and Chrome mobile, to enable
+     * things like redefining `createdCallback` on an element.
+     */
+    var zoneSymbol$1;
+    var _defineProperty;
+    var _getOwnPropertyDescriptor;
+    var _create;
+    var unconfigurablesKey;
+    function propertyPatch() {
+        zoneSymbol$1 = Zone.__symbol__;
+        _defineProperty = Object[zoneSymbol$1('defineProperty')] = Object.defineProperty;
+        _getOwnPropertyDescriptor = Object[zoneSymbol$1('getOwnPropertyDescriptor')] =
+            Object.getOwnPropertyDescriptor;
+        _create = Object.create;
+        unconfigurablesKey = zoneSymbol$1('unconfigurables');
+        Object.defineProperty = function (obj, prop, desc) {
+            if (isUnconfigurable(obj, prop)) {
+                throw new TypeError('Cannot assign to read only property \'' + prop + '\' of ' + obj);
+            }
+            var originalConfigurableFlag = desc.configurable;
+            if (prop !== 'prototype') {
+                desc = rewriteDescriptor(obj, prop, desc);
+            }
+            return _tryDefineProperty(obj, prop, desc, originalConfigurableFlag);
+        };
+        Object.defineProperties = function (obj, props) {
+            Object.keys(props).forEach(function (prop) { Object.defineProperty(obj, prop, props[prop]); });
+            return obj;
+        };
+        Object.create = function (obj, proto) {
+            if (typeof proto === 'object' && !Object.isFrozen(proto)) {
+                Object.keys(proto).forEach(function (prop) {
+                    proto[prop] = rewriteDescriptor(obj, prop, proto[prop]);
+                });
+            }
+            return _create(obj, proto);
+        };
+        Object.getOwnPropertyDescriptor = function (obj, prop) {
+            var desc = _getOwnPropertyDescriptor(obj, prop);
+            if (desc && isUnconfigurable(obj, prop)) {
+                desc.configurable = false;
+            }
+            return desc;
+        };
+    }
+    function _redefineProperty(obj, prop, desc) {
+        var originalConfigurableFlag = desc.configurable;
+        desc = rewriteDescriptor(obj, prop, desc);
+        return _tryDefineProperty(obj, prop, desc, originalConfigurableFlag);
+    }
+    function isUnconfigurable(obj, prop) {
+        return obj && obj[unconfigurablesKey] && obj[unconfigurablesKey][prop];
+    }
+    function rewriteDescriptor(obj, prop, desc) {
+        // issue-927, if the desc is frozen, don't try to change the desc
+        if (!Object.isFrozen(desc)) {
+            desc.configurable = true;
+        }
+        if (!desc.configurable) {
+            // issue-927, if the obj is frozen, don't try to set the desc to obj
+            if (!obj[unconfigurablesKey] && !Object.isFrozen(obj)) {
+                _defineProperty(obj, unconfigurablesKey, { writable: true, value: {} });
+            }
+            if (obj[unconfigurablesKey]) {
+                obj[unconfigurablesKey][prop] = true;
+            }
+        }
+        return desc;
+    }
+    function _tryDefineProperty(obj, prop, desc, originalConfigurableFlag) {
+        try {
+            return _defineProperty(obj, prop, desc);
+        }
+        catch (error) {
+            if (desc.configurable) {
+                // In case of errors, when the configurable flag was likely set by rewriteDescriptor(), let's
+                // retry with the original flag value
+                if (typeof originalConfigurableFlag == 'undefined') {
+                    delete desc.configurable;
+                }
+                else {
+                    desc.configurable = originalConfigurableFlag;
+                }
+                try {
+                    return _defineProperty(obj, prop, desc);
+                }
+                catch (error) {
+                    var descJson = null;
+                    try {
+                        descJson = JSON.stringify(desc);
+                    }
+                    catch (error) {
+                        descJson = desc.toString();
+                    }
+                    console.log("Attempting to configure '" + prop + "' with descriptor '" + descJson + "' on object '" + obj + "' and got error, giving up: " + error);
+                }
+            }
+            else {
+                throw error;
+            }
+        }
+    }
     /**
      * @license
      * Copyright Google Inc. All Rights Reserved.
@@ -8468,9 +8528,14 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
      * found in the LICENSE file at https://angular.io/license
      */
     (function (_global) {
-        _global[Zone.__symbol__('legacyPatch')] = function () {
+        var symbolPrefix = _global['__Zone_symbol_prefix'] || '__zone_symbol__';
+        function __symbol__(name) { return symbolPrefix + name; }
+        _global[__symbol__('legacyPatch')] = function () {
             var Zone = _global['Zone'];
-            Zone.__load_patch('defineProperty', function () { propertyPatch(); });
+            Zone.__load_patch('defineProperty', function (global, Zone, api) {
+                api._redefineProperty = _redefineProperty;
+                propertyPatch();
+            });
             Zone.__load_patch('registerElement', function (global, Zone, api) {
                 registerElementPatch(global, api);
             });
@@ -8892,7 +8957,6 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_RESULT__;/**
      * found in the LICENSE file at https://angular.io/license
      */
 }));
-//# sourceMappingURL=zone_rollup.umd.js.map
 
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
