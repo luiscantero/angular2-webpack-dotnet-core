@@ -257,7 +257,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /**
- * @license Angular v8.2.3
+ * @license Angular v8.2.10
  * (c) 2010-2019 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -6704,7 +6704,7 @@ function isPlatformWorkerUi(platformId) {
 /**
  * @publicApi
  */
-var VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["Version"]('8.2.3');
+var VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["Version"]('8.2.10');
 
 /**
  * @license
@@ -7200,7 +7200,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "R3BoundTarget", function() { return R3BoundTarget; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /**
- * @license Angular v8.2.3
+ * @license Angular v8.2.10
  * (c) 2010-2019 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -25849,7 +25849,7 @@ function publishFacade(global) {
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.io/license
  */
-var VERSION$1 = new Version('8.2.3');
+var VERSION$1 = new Version('8.2.10');
 
 /**
  * @license
@@ -36097,7 +36097,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs */ "./node_modules/rxjs/_esm5/index.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 /**
- * @license Angular v8.2.3
+ * @license Angular v8.2.10
  * (c) 2010-2019 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -54517,7 +54517,7 @@ var Version = /** @class */ (function () {
 /**
  * @publicApi
  */
-var VERSION = new Version('8.2.3');
+var VERSION = new Version('8.2.10');
 
 /**
  * @license
@@ -68704,7 +68704,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /**
- * @license Angular v8.2.3
+ * @license Angular v8.2.10
  * (c) 2010-2019 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -69144,7 +69144,7 @@ var CachedResourceLoader = /** @class */ (function (_super) {
 /**
  * @publicApi
  */
-var VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('8.2.3');
+var VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_1__["Version"]('8.2.10');
 
 /**
  * @license
@@ -69255,7 +69255,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /**
- * @license Angular v8.2.3
+ * @license Angular v8.2.10
  * (c) 2010-2019 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -71800,7 +71800,7 @@ var By = /** @class */ (function () {
 /**
  * @publicApi
  */
-var VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["Version"]('8.2.3');
+var VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["Version"]('8.2.10');
 
 /**
  * @license
@@ -71918,7 +71918,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
 /**
- * @license Angular v8.2.3
+ * @license Angular v8.2.10
  * (c) 2010-2019 Google LLC. https://angular.io/
  * License: MIT
  */
@@ -72021,7 +72021,10 @@ var NavigationEnd = /** @class */ (function (_super) {
     return NavigationEnd;
 }(RouterEvent));
 /**
- * An event triggered when a navigation is canceled.
+ * An event triggered when a navigation is canceled, directly or indirectly.
+ *
+ * This can happen when a [route guard](guide/router#milestone-5-route-guards)
+ * returns `false` or initiates a redirect by returning a `UrlTree`.
  *
  * @publicApi
  */
@@ -75671,7 +75674,7 @@ var Router = /** @class */ (function () {
         this.paramsInheritanceStrategy = 'emptyOnly';
         /**
          * Determines when the router updates the browser URL.
-         * By default (`"deferred"`), udates the browser URL after navigation has finished.
+         * By default (`"deferred"`), updates the browser URL after navigation has finished.
          * Set to `'eager'` to update the browser URL at the beginning of navigation.
          * You can choose to update early so that, if navigation fails,
          * you can show an error message with the URL that failed.
@@ -76037,7 +76040,7 @@ var Router = /** @class */ (function () {
     /**
      * Applies an array of commands to the current URL tree and creates a new URL tree.
      *
-     * When given an activate route, applies the given commands starting from the route.
+     * When given an activated route, applies the given commands starting from the route.
      * Otherwise, applies the given command starting from the root.
      *
      * @param commands An array of commands to apply.
@@ -77628,7 +77631,7 @@ function provideRouterInitializer() {
 /**
  * @publicApi
  */
-var VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["Version"]('8.2.3');
+var VERSION = new _angular_core__WEBPACK_IMPORTED_MODULE_2__["Version"]('8.2.10');
 
 /**
  * @license
@@ -79283,18 +79286,20 @@ var ConnectableObservable = /*@__PURE__*/ (function (_super) {
     return ConnectableObservable;
 }(_Observable__WEBPACK_IMPORTED_MODULE_2__["Observable"]));
 
-var connectableProto = ConnectableObservable.prototype;
-var connectableObservableDescriptor = {
-    operator: { value: null },
-    _refCount: { value: 0, writable: true },
-    _subject: { value: null, writable: true },
-    _connection: { value: null, writable: true },
-    _subscribe: { value: connectableProto._subscribe },
-    _isComplete: { value: connectableProto._isComplete, writable: true },
-    getSubject: { value: connectableProto.getSubject },
-    connect: { value: connectableProto.connect },
-    refCount: { value: connectableProto.refCount }
-};
+var connectableObservableDescriptor = /*@__PURE__*/ (function () {
+    var connectableProto = ConnectableObservable.prototype;
+    return {
+        operator: { value: null },
+        _refCount: { value: 0, writable: true },
+        _subject: { value: null, writable: true },
+        _connection: { value: null, writable: true },
+        _subscribe: { value: connectableProto._subscribe },
+        _isComplete: { value: connectableProto._isComplete, writable: true },
+        getSubject: { value: connectableProto.getSubject },
+        connect: { value: connectableProto.connect },
+        refCount: { value: connectableProto.refCount }
+    };
+})();
 var ConnectableSubscriber = /*@__PURE__*/ (function (_super) {
     tslib__WEBPACK_IMPORTED_MODULE_0__["__extends"](ConnectableSubscriber, _super);
     function ConnectableSubscriber(destination, connectable) {
@@ -80089,7 +80094,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var toString = Object.prototype.toString;
+var toString = /*@__PURE__*/ (function () { return Object.prototype.toString; })();
 function fromEvent(target, eventName, options, resultSelector) {
     if (Object(_util_isFunction__WEBPACK_IMPORTED_MODULE_2__["isFunction"])(options)) {
         resultSelector = options;
@@ -88879,7 +88884,7 @@ var $$iterator = iterator;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "observable", function() { return observable; });
 /** PURE_IMPORTS_START  PURE_IMPORTS_END */
-var observable = typeof Symbol === 'function' && Symbol.observable || '@@observable';
+var observable = /*@__PURE__*/ (function () { return typeof Symbol === 'function' && Symbol.observable || '@@observable'; })();
 //# sourceMappingURL=observable.js.map
 
 
@@ -88897,9 +88902,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "rxSubscriber", function() { return rxSubscriber; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "$$rxSubscriber", function() { return $$rxSubscriber; });
 /** PURE_IMPORTS_START  PURE_IMPORTS_END */
-var rxSubscriber = typeof Symbol === 'function'
-    ? /*@__PURE__*/ Symbol('rxSubscriber')
-    : '@@rxSubscriber_' + /*@__PURE__*/ Math.random();
+var rxSubscriber = /*@__PURE__*/ (function () {
+    return typeof Symbol === 'function'
+        ? /*@__PURE__*/ Symbol('rxSubscriber')
+        : '@@rxSubscriber_' + /*@__PURE__*/ Math.random();
+})();
 var $$rxSubscriber = rxSubscriber;
 //# sourceMappingURL=rxSubscriber.js.map
 
@@ -88917,13 +88924,16 @@ var $$rxSubscriber = rxSubscriber;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ArgumentOutOfRangeError", function() { return ArgumentOutOfRangeError; });
 /** PURE_IMPORTS_START  PURE_IMPORTS_END */
-function ArgumentOutOfRangeErrorImpl() {
-    Error.call(this);
-    this.message = 'argument out of range';
-    this.name = 'ArgumentOutOfRangeError';
-    return this;
-}
-ArgumentOutOfRangeErrorImpl.prototype = /*@__PURE__*/ Object.create(Error.prototype);
+var ArgumentOutOfRangeErrorImpl = /*@__PURE__*/ (function () {
+    function ArgumentOutOfRangeErrorImpl() {
+        Error.call(this);
+        this.message = 'argument out of range';
+        this.name = 'ArgumentOutOfRangeError';
+        return this;
+    }
+    ArgumentOutOfRangeErrorImpl.prototype = /*@__PURE__*/ Object.create(Error.prototype);
+    return ArgumentOutOfRangeErrorImpl;
+})();
 var ArgumentOutOfRangeError = ArgumentOutOfRangeErrorImpl;
 //# sourceMappingURL=ArgumentOutOfRangeError.js.map
 
@@ -88941,13 +88951,16 @@ var ArgumentOutOfRangeError = ArgumentOutOfRangeErrorImpl;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EmptyError", function() { return EmptyError; });
 /** PURE_IMPORTS_START  PURE_IMPORTS_END */
-function EmptyErrorImpl() {
-    Error.call(this);
-    this.message = 'no elements in sequence';
-    this.name = 'EmptyError';
-    return this;
-}
-EmptyErrorImpl.prototype = /*@__PURE__*/ Object.create(Error.prototype);
+var EmptyErrorImpl = /*@__PURE__*/ (function () {
+    function EmptyErrorImpl() {
+        Error.call(this);
+        this.message = 'no elements in sequence';
+        this.name = 'EmptyError';
+        return this;
+    }
+    EmptyErrorImpl.prototype = /*@__PURE__*/ Object.create(Error.prototype);
+    return EmptyErrorImpl;
+})();
 var EmptyError = EmptyErrorImpl;
 //# sourceMappingURL=EmptyError.js.map
 
@@ -89000,13 +89013,16 @@ var Immediate = {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ObjectUnsubscribedError", function() { return ObjectUnsubscribedError; });
 /** PURE_IMPORTS_START  PURE_IMPORTS_END */
-function ObjectUnsubscribedErrorImpl() {
-    Error.call(this);
-    this.message = 'object unsubscribed';
-    this.name = 'ObjectUnsubscribedError';
-    return this;
-}
-ObjectUnsubscribedErrorImpl.prototype = /*@__PURE__*/ Object.create(Error.prototype);
+var ObjectUnsubscribedErrorImpl = /*@__PURE__*/ (function () {
+    function ObjectUnsubscribedErrorImpl() {
+        Error.call(this);
+        this.message = 'object unsubscribed';
+        this.name = 'ObjectUnsubscribedError';
+        return this;
+    }
+    ObjectUnsubscribedErrorImpl.prototype = /*@__PURE__*/ Object.create(Error.prototype);
+    return ObjectUnsubscribedErrorImpl;
+})();
 var ObjectUnsubscribedError = ObjectUnsubscribedErrorImpl;
 //# sourceMappingURL=ObjectUnsubscribedError.js.map
 
@@ -89024,13 +89040,16 @@ var ObjectUnsubscribedError = ObjectUnsubscribedErrorImpl;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TimeoutError", function() { return TimeoutError; });
 /** PURE_IMPORTS_START  PURE_IMPORTS_END */
-function TimeoutErrorImpl() {
-    Error.call(this);
-    this.message = 'Timeout has occurred';
-    this.name = 'TimeoutError';
-    return this;
-}
-TimeoutErrorImpl.prototype = /*@__PURE__*/ Object.create(Error.prototype);
+var TimeoutErrorImpl = /*@__PURE__*/ (function () {
+    function TimeoutErrorImpl() {
+        Error.call(this);
+        this.message = 'Timeout has occurred';
+        this.name = 'TimeoutError';
+        return this;
+    }
+    TimeoutErrorImpl.prototype = /*@__PURE__*/ Object.create(Error.prototype);
+    return TimeoutErrorImpl;
+})();
 var TimeoutError = TimeoutErrorImpl;
 //# sourceMappingURL=TimeoutError.js.map
 
@@ -89048,15 +89067,18 @@ var TimeoutError = TimeoutErrorImpl;
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UnsubscriptionError", function() { return UnsubscriptionError; });
 /** PURE_IMPORTS_START  PURE_IMPORTS_END */
-function UnsubscriptionErrorImpl(errors) {
-    Error.call(this);
-    this.message = errors ?
-        errors.length + " errors occurred during unsubscription:\n" + errors.map(function (err, i) { return i + 1 + ") " + err.toString(); }).join('\n  ') : '';
-    this.name = 'UnsubscriptionError';
-    this.errors = errors;
-    return this;
-}
-UnsubscriptionErrorImpl.prototype = /*@__PURE__*/ Object.create(Error.prototype);
+var UnsubscriptionErrorImpl = /*@__PURE__*/ (function () {
+    function UnsubscriptionErrorImpl(errors) {
+        Error.call(this);
+        this.message = errors ?
+            errors.length + " errors occurred during unsubscription:\n" + errors.map(function (err, i) { return i + 1 + ") " + err.toString(); }).join('\n  ') : '';
+        this.name = 'UnsubscriptionError';
+        this.errors = errors;
+        return this;
+    }
+    UnsubscriptionErrorImpl.prototype = /*@__PURE__*/ Object.create(Error.prototype);
+    return UnsubscriptionErrorImpl;
+})();
 var UnsubscriptionError = UnsubscriptionErrorImpl;
 //# sourceMappingURL=UnsubscriptionError.js.map
 
@@ -89145,7 +89167,7 @@ function identity(x) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "isArray", function() { return isArray; });
 /** PURE_IMPORTS_START  PURE_IMPORTS_END */
-var isArray = Array.isArray || (function (x) { return x && typeof x.length === 'number'; });
+var isArray = /*@__PURE__*/ (function () { return Array.isArray || (function (x) { return x && typeof x.length === 'number'; }); })();
 //# sourceMappingURL=isArray.js.map
 
 

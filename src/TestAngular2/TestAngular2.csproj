@@ -1,54 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
     <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <None Update="wwwroot\**\*">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.All" />
-    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.2.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="app\about.component.css">
-      <DependentUpon>about.component.html</DependentUpon>
-    </None>
-    <None Update="app\about.component.ts">
-      <DependentUpon>about.component.html</DependentUpon>
-    </None>
-    <None Update="app\app.component.css">
-      <DependentUpon>app.component.html</DependentUpon>
-    </None>
-    <None Update="app\app.component.ts">
-      <DependentUpon>app.component.html</DependentUpon>
-    </None>
-    <None Update="app\author-details.component.css">
-      <DependentUpon>author-details.component.html</DependentUpon>
-    </None>
-    <None Update="app\author-details.component.ts">
-      <DependentUpon>author-details.component.html</DependentUpon>
-    </None>
-    <None Update="app\author-search.component.ts">
-      <DependentUpon>author-search.component.html</DependentUpon>
-    </None>
-    <None Update="app\intro.component.css">
-      <DependentUpon>intro.component.html</DependentUpon>
-    </None>
-    <None Update="app\intro.component.ts">
-      <DependentUpon>intro.component.html</DependentUpon>
-    </None>
-    <None Update="app\nestme.component.css">
-      <DependentUpon>nestme.component.html</DependentUpon>
-    </None>
-    <None Update="app\nestme.component.ts">
-      <DependentUpon>nestme.component.html</DependentUpon>
     </None>
   </ItemGroup>
 
