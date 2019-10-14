@@ -23,16 +23,6 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthGuard } from './auth.guard';
 
 @NgModule({
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        BrowserAnimationsModule,
-        FormsModule,
-        ReactiveFormsModule,
-        HttpClientModule,
-        MaterialModule,
-        NgReduxModule,
-    ],
     declarations: [
         AppComponent,
         IntroComponent,
@@ -43,6 +33,16 @@ import { AuthGuard } from './auth.guard';
         AlertOnClickDirective,
         AuthorSearchComponent,
     ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        MaterialModule,
+        NgReduxModule,
+    ],
     providers: [
         AdalService,
         AdalGuard,
@@ -50,6 +50,6 @@ import { AuthGuard } from './auth.guard';
         //{ provide: HTTP_INTERCEPTORS, useClass: AdalInterceptor, multi: true },
         AuthGuard,
     ],
-    bootstrap: [ AppComponent ]
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

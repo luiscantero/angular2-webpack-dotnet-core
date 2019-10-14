@@ -1,5 +1,4 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { setTimeout } from 'core-js';
 
 @Component({
     selector: 'nest-me',
