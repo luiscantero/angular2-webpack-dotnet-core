@@ -34,6 +34,8 @@ namespace TestAngular2
             });
 
             app.UseFileServer();
+
+            app.UseRouting();
         }
     }
 }
