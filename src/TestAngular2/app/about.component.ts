@@ -22,7 +22,8 @@ export class AboutComponent implements OnInit, OnDestroy {
     msg = "Hello from about!";
     useRedBack = false;
     repo: string;
-    authors: Author[];
+    authors: Array<Author>;
+    authors$: Observable<Array<Author>>;
     author: any = { name: "Bill", age: 20 };
     @select("authors") reduxAuthors: Observable<Author>;
     @select() lastUpdate: Observable<Date>;
@@ -33,9 +34,17 @@ export class AboutComponent implements OnInit, OnDestroy {
         private ngRedux: NgRedux<IAppState>,
         private adalService: AdalService) { }
 
-    ngOnInit(): void {
-        this.authorService.getAuthors()
-            .then((authors: Author[]) => this.authors = authors);
+    async ngOnInit(): Promise<void> {
+        // Use promise.
+        //this.authors = await this.authorService.getAuthors();
+
+        // Use observable.
+        this.authorService.getAuthorsAsObservable().subscribe(response => {
+            this.authors = response.data;
+        });
+
+        // Use observable and map.
+        this.authors$ = this.authorService.getAuthorsAsObservableMap();
 
         this.repo = this.repoSvc.get("repo");
 

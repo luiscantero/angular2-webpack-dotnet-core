@@ -11,6 +11,7 @@ const express = require('express'),
 const port = process.env.PORT || 8081;
 
 app.use(cors());
+app.use(express.json());
 
 // Read authors from file.
 // const webroot = 'wwwroot';
@@ -29,6 +30,39 @@ app.get('/api/authors', async (req, res) => {
     res.send(JSON.stringify(authors));
 });
 
+// POST: api/authors/
+app.post('/api/authors', async (req, res) => {
+    console.log('post: ' + JSON.stringify(req.body));
+    var author = req.body;
+
+    // Insert.
+    if (author) {
+        fakeAuthors.push(author);
+        res.writeHead(201);
+    }
+
+    res.end(JSON.stringify(author));
+});
+
+// PUT: api/authors/
+app.put('/api/authors/:name', async (req, res) => {
+    console.log('put: ' + JSON.stringify(req.body));
+    var name = req.params.name;
+    var author = req.body;
+
+    if (author && author.name === name) {
+        let index = fakeAuthors.findIndex(a => a.name === name); // Find author index.
+
+        if (index > -1 && index < fakeAuthors.length) { // Index within bounds.
+            // Update.
+            fakeAuthors[index] = author;
+            res.writeHead(204);
+        }
+    }
+
+    res.end(JSON.stringify(author));
+});
+
 // GET: api/authors/name
 app.get('/api/authors/:name', async (req, res) => {
     var authors = await getAllAuthors();
@@ -37,12 +71,8 @@ app.get('/api/authors/:name', async (req, res) => {
     var name = req.params.name;
     var results = { data: [] };
 
-    // Collect matching items.
-    for (var i = 0, len = data.length; i < len; i++) {
-        if (data[i].name.toLowerCase().includes(name.toLowerCase())) {
-            results.data.push(data[i]);
-        }
-    }
+    // Find filtered results
+    results = data.filter(a => a.name.toLowerCase().includes(name.toLowerCase()));
 
     res.send(JSON.stringify(results));
 });
@@ -71,7 +101,7 @@ async function getAllAuthors() {
 }
 
 function loadAuthors() {
-    for (var i = 0; i < AUTHORS; i++) {
+    for (let i = 0; i < AUTHORS; i++) {
         fakeAuthors[i] = { name: faker.name.findName(), age: faker.random.number({ min: 18, max: 99 }) };
     }
 }

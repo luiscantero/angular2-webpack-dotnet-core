@@ -48,7 +48,14 @@
     <hr />
     <input [(ngModel)]="repo" placeholder="Repository" />
     <hr />
+    Array:
     <div *ngFor="let author of authors" (click)="showDetails(author)">
+        <div>{{author.name}} ({{author.age}})</div>
+    </div>
+    <hr />
+    <hr />
+    Observable array:
+    <div *ngFor="let author of authors$ | async" (click)="showDetails(author)">
         <div>{{author.name}} ({{author.age}})</div>
     </div>
     <hr />
