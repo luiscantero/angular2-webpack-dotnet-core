@@ -53,7 +53,6 @@
         <div>{{author.name}} ({{author.age}})</div>
     </div>
     <hr />
-    <hr />
     Observable array:
     <div *ngFor="let author of authors$ | async" (click)="showDetails(author)">
         <div>{{author.name}} ({{author.age}})</div>
@@ -64,9 +63,9 @@
     <div>
         <button (click)="addAuthor()" mat-raised-button>Add new author</button>&nbsp;
         <button (click)="clearAuthors()" mat-raised-button>Clear authors</button>&nbsp;
-        <span>Last updated: {{lastUpdate | async | localedatetime}}</span>
+        <span>Last updated: {{lastUpdate$ | async | localedatetime}}</span>
     </div>
-    <div *ngFor="let author of reduxAuthors | async">
+    <div *ngFor="let author of reduxAuthors$ | async">
         <div>{{author.name}} ({{author.age}})</div>
     </div>
     <hr />

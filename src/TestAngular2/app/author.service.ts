@@ -2,15 +2,11 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Author } from './author.model';
 import { environment } from '../environments/environment';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, of } from 'rxjs';
+import { map, catchError } from 'rxjs/operators';
 
 const httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
-
-const httpOptionsObservable = {
-    observe: 'response' as 'body',
 };
 
 @Injectable({ providedIn: 'root' })
@@ -49,10 +45,10 @@ export class AuthorService {
             .catch(this.handleError);
     }
 
-    private postAsObservable(author: Author): Observable<{ data: Author }> {
-        return this.http
-            .post<{ data: Author }>(this.authorsUrl, author);
-    }
+private postAsObservable(author: Author): Observable<Author> {
+    return this.http
+        .post<Author>(this.authorsUrl, author);
+}
 
     // Update.
     private put(author: Author): Promise<Author> {
@@ -65,15 +61,15 @@ export class AuthorService {
             .catch(this.handleError);
     }
 
-    private putAsObservable(author: Author): Observable<HttpResponse<{ data: Author }>> {
+    private putAsObservable(author: Author): Observable<HttpResponse<object>> {
         let url = `${this.authorsUrl}/${author.name}`;
 
-        const httpOptionsObservable: { observe: any; } = {
+        let httpOptions: { observe: any; } = {
             observe: 'response',
         };
 
         return this.http
-            .put(url, author, httpOptionsObservable) as Observable<HttpResponse<{ data: Author }>>;
+            .put(url, author, httpOptions) as Observable<HttpResponse<{ data: Author }>>;
     }
 
     // Delete.
@@ -90,7 +86,11 @@ export class AuthorService {
         let url = `${this.authorsUrl}/${author.name}`;
 
         this.http
-            .delete(url, httpOptionsObservable);
+            .delete(url).pipe(catchError((error: string) => {
+                // Todo: Real error handling.
+                console.log(error);
+                return of<object>(null);
+            }));
     }
 
     // Create if new, otherwise update.

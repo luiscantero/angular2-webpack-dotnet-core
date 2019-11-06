@@ -15,11 +15,11 @@ import { Author } from './author.model';
     providers: [AuthorSearchService],
 })
 export class AuthorSearchComponent implements OnInit {
-    authors: Observable<Author[]>;
-    searchSubject = new Subject<string>(); // Observable/Observer.
+    authors$: Observable<Author[]>;
+    searchSubject$ = new Subject<string>(); // Observable/Observer.
 
     private allTerms: string[] = [];
-    terms: Observable<string[]>;
+    terms$: Observable<string[]>;
     term = new FormControl();
 
     constructor(
@@ -27,10 +27,10 @@ export class AuthorSearchComponent implements OnInit {
         private router: Router) { }
 
     // Push search term into observable stream.
-    search(term: string) { this.searchSubject.next(term); }
+    search(term: string) { this.searchSubject$.next(term); }
 
     ngOnInit(): void {
-        this.authors = this.searchSubject
+        this.authors$ = this.searchSubject$
             .asObservable()           // Cast to Observable.
             .pipe(
             debounceTime(300),        // Wait 300 ms after input finished.
@@ -46,7 +46,7 @@ export class AuthorSearchComponent implements OnInit {
                 return of<Author[]>([]);
             }));
 
-        this.terms = this.term.valueChanges
+        this.terms$ = this.term.valueChanges
             .pipe(
             debounceTime(300),      // Wait 300 ms after input finished.
             distinctUntilChanged(),   // Ignore if same as previous.

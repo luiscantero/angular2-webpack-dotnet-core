@@ -60,7 +60,7 @@ app.put('/api/authors/:name', async (req, res) => {
         }
     }
 
-    res.end(JSON.stringify(author));
+    res.end();
 });
 
 // GET: api/authors/name
@@ -72,7 +72,7 @@ app.get('/api/authors/:name', async (req, res) => {
     var results = { data: [] };
 
     // Find filtered results
-    results = data.filter(a => a.name.toLowerCase().includes(name.toLowerCase()));
+    results.data = data.filter(a => a.name.toLowerCase().includes(name.toLowerCase()));
 
     res.send(JSON.stringify(results));
 });

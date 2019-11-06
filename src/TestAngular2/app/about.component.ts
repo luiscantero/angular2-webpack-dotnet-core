@@ -25,8 +25,8 @@ export class AboutComponent implements OnInit, OnDestroy {
     authors: Array<Author>;
     authors$: Observable<Array<Author>>;
     author: any = { name: "Bill", age: 20 };
-    @select("authors") reduxAuthors: Observable<Author>;
-    @select() lastUpdate: Observable<Date>;
+    @select("authors") reduxAuthors$: Observable<Author>;
+    @select() lastUpdate$: Observable<Date>;
 
     constructor(private router: Router,
         private authorService: AuthorService,
