@@ -14,9 +14,11 @@ export class AuthComponent implements OnInit {
     ngOnInit(): void {
         var url = sessionStorage.getItem("UrlBeforeAuth");
         console.log("AuthComponent UrlBeforeAuth: " + url);
-        if (url !== null) {
-            // Fwd to stored URL.
-            this.router.navigate([url]);
+
+        if (url === null) {
+            url = '/';
         }
+
+        this.router.navigate([url]);
     }
 }
