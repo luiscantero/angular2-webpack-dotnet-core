@@ -13,6 +13,7 @@ import { NgReduxModule } from '@angular-redux/store';
 import { IntroComponent } from './intro.component';
 import { AboutComponent } from './about.component';
 import { AuthorDetailsComponent } from './author-details.component';
+import { AuthComponent } from './auth.component';
 import { LocaleDatetimePipe } from './locale-datetime.pipe';
 import { NestmeComponent } from './nestme.component';
 import { AlertOnClickDirective } from './alert.directive';
@@ -28,6 +29,7 @@ import { AuthGuard } from './auth.guard';
         IntroComponent,
         AboutComponent,
         AuthorDetailsComponent,
+        AuthComponent,
         LocaleDatetimePipe,
         NestmeComponent,
         AlertOnClickDirective,

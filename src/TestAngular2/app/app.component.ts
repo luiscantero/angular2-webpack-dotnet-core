@@ -26,6 +26,9 @@ export class AppComponent {
 
     login() {
         if (this.adalEnabled()) {
+            console.log("AppComponent UrlBeforeAuth: " + location.pathname);
+            sessionStorage.setItem("UrlBeforeAuth", location.pathname);
+            this.adalService.config.redirectUri = `${window.location.origin}/auth`;
             this.adalService.login();
         }
     }
@@ -33,7 +36,9 @@ export class AppComponent {
     logout() {
         if (this.adalService.userInfo.authenticated) {
             // Don't redirect to a protected page!
-            this.adalService.config.redirectUri = `${window.location.origin}`;
+            console.log("AppComponent UrlBeforeAuth: /");
+            sessionStorage.setItem("UrlBeforeAuth", "/");
+            this.adalService.config.redirectUri = `${window.location.origin}/auth`;
             this.adalService.logOut();
         }
     }
