@@ -7,13 +7,11 @@ import { Router } from '@angular/router';
     styles: [``],
 })
 export class AuthComponent implements OnInit {
-    repo: string;
-
     constructor(private router: Router) { }
 
     ngOnInit(): void {
-        var url = sessionStorage.getItem("UrlBeforeAuth");
-        console.log("AuthComponent UrlBeforeAuth: " + url);
+        var url = sessionStorage.getItem('UrlBeforeAuth');
+        console.log('AuthComponent UrlBeforeAuth: ' + url);
 
         if (url === null) {
             url = '/';

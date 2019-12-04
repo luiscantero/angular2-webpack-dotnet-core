@@ -11,8 +11,8 @@ export class AuthGuard implements CanActivate, CanActivateChild {
         if (this.adalService.userInfo.authenticated) {
             return true;
         } else {
-            console.log("AuthGuard UrlBeforeAuth: " + location.pathname);
-            sessionStorage.setItem("UrlBeforeAuth", location.pathname);
+            console.log('AuthGuard UrlBeforeAuth: ' + location.pathname);
+            sessionStorage.setItem('UrlBeforeAuth', location.pathname);
             this.adalService.config.redirectUri = `${window.location.origin}/auth`;
             this.adalService.login();
             return false;

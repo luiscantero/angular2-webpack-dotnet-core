@@ -12,7 +12,7 @@ import { environment } from '../environments/environment';
     styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-    title = "Angular 8 Test";
+    title = 'Angular 8 Test';
 
     constructor(private ngRedux: NgRedux<IAppState>,
         private adalService: AdalService) {
@@ -26,8 +26,8 @@ export class AppComponent {
 
     login() {
         if (this.adalEnabled()) {
-            console.log("AppComponent UrlBeforeAuth: " + location.pathname);
-            sessionStorage.setItem("UrlBeforeAuth", location.pathname);
+            console.log('AppComponent UrlBeforeAuth: ' + location.pathname);
+            sessionStorage.setItem('UrlBeforeAuth', location.pathname);
             this.adalService.config.redirectUri = `${window.location.origin}/auth`;
             this.adalService.login();
         }
@@ -36,8 +36,8 @@ export class AppComponent {
     logout() {
         if (this.adalService.userInfo.authenticated) {
             // Don't redirect to a protected page!
-            console.log("AppComponent UrlBeforeAuth: /");
-            sessionStorage.setItem("UrlBeforeAuth", "/");
+            console.log('AppComponent UrlBeforeAuth: /');
+            sessionStorage.setItem('UrlBeforeAuth', '/');
             this.adalService.config.redirectUri = `${window.location.origin}/auth`;
             this.adalService.logOut();
         }
