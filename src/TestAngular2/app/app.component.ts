@@ -12,7 +12,7 @@ import { environment } from '../environments/environment';
     styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-    title = 'Angular 8 Test';
+    title = 'Angular 9 Test';
 
     constructor(private ngRedux: NgRedux<IAppState>,
         private adalService: AdalService) {
